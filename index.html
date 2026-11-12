@@ -1,392 +1,962 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#07516B">
-        <meta name="description" content="Connect with local businesses, discover community events, and grow with the Bluebonnet Area Chamber of Commerce.">
-        <title>Bluebonnet Area Chamber of Commerce</title>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Selph Chamber of Commerce | Building Business, Building Community</title>
+<meta name="description" content="Selph Chamber connects local businesses through networking, events, leadership programs, and a strong member directory. Join the chamber that helps your business grow.">
+<meta name="theme-color" content="#0A2B3A">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-        <script>
-        tailwind.config = {
-            theme: {
-            extend: {
-                colors: {
-                deep: '#08617F',
-                sky:  '#B8E9F5',
-                teal: '#8BDCE0',
-                mint: '#A1E4DB',
-                lime: '#E9F8CD',
-                ink:  '#0A2B3A'
-                },
-                fontFamily: {
-                display: ['"Bricolage Grotesque"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-                body: ['"Public Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif']
-                }
-            }
-            }
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          deep: '#0E7EA6',
+          sky:  '#27C2F8',
+          teal: '#8BDCE0',
+          mint: '#A1E4DB',
+          lime: '#E9F8CD',
+          ink:  '#0A2B3A'
+        },
+        fontFamily: {
+          display: ['"Bricolage Grotesque"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          body: ['"Public Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif']
         }
-        </script>
+      }
+    }
+  }
+</script>
 
-        <style type="text/tailwindcss">
-        @layer base {
-            html { font-family: 'Public Sans', ui-sans-serif, system-ui, sans-serif; color: #0A2B3A; scroll-padding-top: 6rem; }
-            h1, h2, h3 { font-family: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif; letter-spacing: -0.01em; }
-            :focus-visible { outline: 3px solid #07516B; outline-offset: 4px; border-radius: 4px; }
-            ::selection { background: #B8E9F5; color: #0A2B3A; }
-        }
-        @layer components {
-            .btn { @apply inline-flex min-h-[48px] items-center justify-center rounded-lg px-6 py-3 font-semibold transition duration-200 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:shadow-none; }
-            .btn-primary { @apply bg-deep text-white shadow-lg shadow-deep/20 hover:bg-ink hover:text-white; }
-            .btn-quiet { @apply border-2 border-ink text-ink hover:bg-ink hover:text-white; }
-            .link { @apply font-semibold transition-colors text-[#07516B] underline decoration-sky decoration-2 underline-offset-4 hover:text-ink; }
-            .wrap { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
-        }
-        </style>
-        <script>document.documentElement.classList.add('js')</script>
-        <style>
-        @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
-        @keyframes sway { 0%, 100% { transform: rotate(-1.2deg); } 50% { transform: rotate(1.2deg); } }
-        @keyframes menuIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
-        .hero-in { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
-        .d1 { animation-delay: .05s; } .d2 { animation-delay: .17s; } .d3 { animation-delay: .29s; } .d4 { animation-delay: .41s; }
-        .js [data-reveal] { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0s); }
-        .js [data-reveal].is-in { opacity: 1; transform: none; }
-        .sway { transform-origin: 50% 0; animation: sway 6s ease-in-out infinite; }
-        #site-nav[data-open="true"] { animation: menuIn .22s ease-out; }
-        #menu-btn .icon-x { display: none; }
-        #menu-btn[aria-expanded="true"] .icon-menu { display: none; }
-        #menu-btn[aria-expanded="true"] .icon-x { display: block; }
-        @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto !important; }
-            *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
-            .js [data-reveal] { opacity: 1 !important; transform: none !important; }
-        }
-        </style>
-    </head>
+<style type="text/tailwindcss">
+  @layer base {
+    html { font-family: 'Public Sans', ui-sans-serif, system-ui, sans-serif; color: #0A2B3A; }
+    h1, h2, h3 { font-family: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif; letter-spacing: -0.01em; }
+    :focus-visible { outline: 3px solid #0A2B3A; outline-offset: 3px; border-radius: 4px; }
+  }
+  @layer components {
+    .btn { @apply inline-flex min-h-[48px] items-center justify-center rounded-lg px-6 py-3 font-semibold transition duration-200 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:shadow-none; }
+    .btn-primary { @apply bg-sky text-ink hover:bg-ink hover:text-white; }
+    .btn-quiet { @apply border-2 border-ink text-ink hover:bg-ink hover:text-white; }
+    .btn-light { @apply border-2 border-white text-white hover:bg-white hover:text-ink; }
+    .link { @apply font-semibold transition-colors text-deep underline decoration-sky decoration-2 underline-offset-4 hover:text-ink; }
+    .wrap { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
+  }
+</style>
+<script>document.documentElement.classList.add('js')</script>
+<style>
+  @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  @keyframes menuIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+  .hero-in { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
+  .d1 { animation-delay: .05s; } .d2 { animation-delay: .17s; } .d3 { animation-delay: .29s; } .d4 { animation-delay: .41s; }
+  .js [data-reveal] { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0s); }
+  .js [data-reveal].is-in { opacity: 1; transform: none; }
 
-    <body class="overflow-x-hidden bg-white font-body text-base leading-relaxed text-ink antialiased">
+    /* Sticky transparent header — overlaps hero */
+  #site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    transition: background-color .3s ease, box-shadow .3s ease, backdrop-filter .3s ease, border-color .3s ease;
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+  }
+  #site-header.is-scrolled {
+    background-color: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(10, 43, 58, 0.08);
+    border-bottom-color: rgba(10, 43, 58, 0.08);
+  }
 
-    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-ink focus:px-4 focus:py-3 focus:text-white">Skip to main content</a>
+  /* Nav / logo colors: white over hero, dark when scrolled */
+  #site-header .nav-link { color: #fff; transition: color .25s ease; }
+  #site-header.is-scrolled .nav-link { color: #0A2B3A; }
+  #site-header .nav-link:hover { color: #27C2F8; }
+  #site-header.is-scrolled .nav-link:hover { color: #0E7EA6; }
 
-    <header class="sticky top-0 relative z-40 border-b border-ink/10 bg-white/95 shadow-sm backdrop-blur-md">
-    <div class="wrap flex flex-wrap items-center justify-between gap-x-4 gap-y-2 py-3 lg:py-4">
-        <a href="#" class="flex items-center gap-3 font-display text-lg font-extrabold leading-tight text-deep sm:text-xl">
-        <span aria-hidden="true" class="grid h-10 w-10 place-items-center rounded-full bg-deep text-lg text-white">B</span>
-        Bluebonnet Area Chamber
-        </a>
-            <button id="menu-btn" type="button" aria-label="Menu" class="inline-flex min-h-[48px] items-center justify-center rounded-lg border-2 border-ink px-4 font-semibold transition-colors hover:bg-ink hover:text-white lg:hidden" aria-expanded="false" aria-controls="site-nav">
-        <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
-            <path class="icon-menu" d="M4 7h16M4 12h16M4 17h16"/>
-            <path class="icon-x" d="M6 6l12 12M18 6L6 18"/>
+  #site-header .logo-text { color: #fff; transition: color .25s ease; }
+  #site-header.is-scrolled .logo-text { color: #0E7EA6; }
+
+  #site-header .menu-btn-border { border-color: #fff; color: #fff; }
+  #site-header.is-scrolled .menu-btn-border { border-color: #0A2B3A; color: #0A2B3A; }
+
+  #hero {
+    margin-top: -4.5rem; /* ~header height */
+  }
+  @media (min-width: 1024px) {
+    #hero {
+      margin-top: -5rem;
+    }
+  }
+
+  #hero .hero-inner {
+    padding-top: 6.5rem;
+  }
+  @media (min-width: 1024px) {
+    #hero .hero-inner {
+      padding-top: 7.5rem;
+    }
+  }
+
+  /* Mobile open menu: solid panel so links stay readable */
+  @media (max-width: 1023px) {
+    #site-header #site-nav[data-open="true"] {
+      background: #fff;
+      border-radius: 0 0 1rem 1rem;
+      box-shadow: 0 12px 24px rgba(10, 43, 58, 0.12);
+      margin-top: 0.25rem;
+      padding: 0.5rem 0 1rem;
+    }
+    #site-header #site-nav[data-open="true"] .nav-link {
+      color: #0A2B3A;
+    }
+    #site-header #site-nav[data-open="true"] li {
+      border-color: rgba(10, 43, 58, 0.1);
+    }
+  }
+
+  /* Hamburger → X */
+  .hamburger-icon span {
+    display: block;
+    width: 20px;
+    height: 2.4px;
+    background: currentColor;
+    border-radius: 2px;
+    transition: transform .25s ease, opacity .2s ease;
+  }
+  .hamburger-icon span + span { margin-top: 5px; }
+  #menu-btn[aria-expanded="true"] .hamburger-icon span:nth-child(1) { transform: translateY(7.4px) rotate(45deg); }
+  #menu-btn[aria-expanded="true"] .hamburger-icon span:nth-child(2) { opacity: 0; }
+  #menu-btn[aria-expanded="true"] .hamburger-icon span:nth-child(3) { transform: translateY(-7.4px) rotate(-45deg); }
+
+  #site-nav[data-open="true"] { animation: menuIn .22s ease-out; }
+
+  .scroll-mt-nav { scroll-margin-top: 5.5rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto !important; }
+    *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
+    .js [data-reveal] { opacity: 1 !important; transform: none !important; }
+  }
+</style>
+</head>
+
+<body class="overflow-x-hidden bg-white font-body text-base leading-relaxed text-ink antialiased">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-ink focus:px-4 focus:py-3 focus:text-white">Skip to main content</a>
+
+<!-- Alert bar -->
+<div id="alert" role="region" aria-label="Member alert" class="bg-teal text-ink">
+  <div class="wrap flex items-start justify-between gap-4 py-2.5 text-sm">
+    <p><strong>Member alert:</strong> The chamber never sells or shares its member email list. If a message says otherwise, please delete it and let us know.</p>
+    <button id="alert-close" type="button" class="-my-1 grid h-11 w-11 shrink-0 place-items-center rounded-lg transition-colors hover:bg-ink hover:text-white" aria-label="Dismiss member alert">
+      <svg aria-hidden="true" viewBox="0 0 20 20" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 5l10 10M15 5L5 15"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- Utility bar -->
+<div class="bg-ink text-sm text-white">
+  <div class="wrap flex flex-wrap items-center justify-between gap-x-6 gap-y-1 py-1">
+    <a class="inline-block py-2 font-semibold underline-offset-4 hover:underline" href="tel:+15555550100">(555) 555-0100</a>
+    <ul class="flex flex-wrap items-center gap-x-5">
+      <li><a class="inline-block py-2 underline-offset-4 hover:underline" href="#">Member login</a></li>
+      <li class="hidden sm:block"><a class="inline-block py-2 underline-offset-4 hover:underline" href="#events">Event calendar</a></li>
+      <li class="hidden sm:block"><a class="inline-block py-2 underline-offset-4 hover:underline" href="#">Hot deals</a></li>
+      <li class="hidden md:block"><a class="inline-block py-2 underline-offset-4 hover:underline" href="#">Job board</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Sticky transparent header -->
+<header id="site-header" class="relative">
+  <div class="wrap flex flex-wrap items-center justify-between gap-x-4 gap-y-2 py-3 lg:py-4">
+    <a href="#" class="flex items-center gap-3 font-display text-lg font-extrabold leading-tight sm:text-xl">
+      <span aria-hidden="true" class="grid h-10 w-10 place-items-center rounded-full bg-sky text-ink shadow-sm ring-2 ring-white/40">
+        <svg viewBox="0 0 32 32" class="h-6 w-6" fill="none" aria-hidden="true">
+          <path d="M16 4c-4.4 0-8 3.2-8 7.2 0 5.6 8 12.8 8 12.8s8-7.2 8-12.8C24 7.2 20.4 4 16 4z" fill="#0A2B3A"/>
+          <circle cx="16" cy="11.2" r="2.8" fill="#27C2F8"/>
         </svg>
-        </button>
-        <nav id="site-nav" aria-label="Main" class="hidden w-full data-[open=true]:block lg:block lg:w-auto">
-        <ul class="flex flex-col text-base font-semibold lg:flex-row lg:items-center lg:gap-x-5 lg:text-[15px]">
-            <li class="group relative border-b border-ink/10 lg:border-0" data-sub>
-            <button type="button" class="flex min-h-[48px] w-full items-center justify-between gap-2 rounded-lg px-1 py-3 transition-colors hover:text-deep hover:underline hover:underline-offset-4 lg:min-h-[44px] lg:w-auto lg:py-2" aria-expanded="false" aria-controls="sub-membership">Membership <svg aria-hidden="true" viewBox="0 0 20 20" class="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[open=true]:rotate-180" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l5 5 5-5"/></svg></button>
-            <ul id="sub-membership" class="mb-3 ml-1 hidden border-l-4 border-mint pl-2 font-medium group-data-[open=true]:block lg:absolute lg:left-0 lg:top-full lg:z-30 lg:mb-0 lg:ml-0 lg:mt-0 lg:block lg:min-w-[250px] lg:translate-y-2 lg:rounded-xl lg:border-0 lg:bg-white lg:p-2 lg:opacity-0 lg:shadow-lg lg:ring-1 lg:ring-ink/15 lg:invisible lg:transition lg:duration-200 lg:ease-out lg:group-data-[open=true]:visible lg:group-data-[open=true]:translate-y-0 lg:group-data-[open=true]:opacity-100">
-                <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60 hover:underline hover:underline-offset-4" href="#why-join">Why join</a></li>
-                <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60 hover:underline hover:underline-offset-4" href="#new-title">New member luncheon</a></li>
-                <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60 hover:underline hover:underline-offset-4" href="#join">Apply to join</a></li>
-            </ul>
-            </li>
-            <li class="group relative border-b border-ink/10 lg:border-0" data-sub>
-            <button type="button" class="flex min-h-[48px] w-full items-center justify-between gap-2 rounded-lg px-1 py-3 transition-colors hover:text-deep hover:underline hover:underline-offset-4 lg:min-h-[44px] lg:w-auto lg:py-2" aria-expanded="false" aria-controls="sub-events">Events <svg aria-hidden="true" viewBox="0 0 20 20" class="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[open=true]:rotate-180" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l5 5 5-5"/></svg></button>
-            <ul id="sub-events" class="mb-3 ml-1 hidden border-l-4 border-mint pl-2 font-medium group-data-[open=true]:block lg:absolute lg:left-0 lg:top-full lg:z-30 lg:mb-0 lg:ml-0 lg:mt-0 lg:block lg:min-w-[250px] lg:translate-y-2 lg:rounded-xl lg:border-0 lg:bg-white lg:p-2 lg:opacity-0 lg:shadow-lg lg:ring-1 lg:ring-ink/15 lg:invisible lg:transition lg:duration-200 lg:ease-out lg:group-data-[open=true]:visible lg:group-data-[open=true]:translate-y-0 lg:group-data-[open=true]:opacity-100">
-                <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60 hover:underline hover:underline-offset-4" href="#this-month">This month</a></li>
-                <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60 hover:underline hover:underline-offset-4" href="#events">Looking ahead</a></li>
-                <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60 hover:underline hover:underline-offset-4" href="#events">Annual awards gala</a></li>
-            </ul>
-            </li>
-            <li class="group relative border-b border-ink/10 lg:border-0" data-sub>
-            <button type="button" class="flex min-h-[48px] w-full items-center justify-between gap-2 rounded-lg px-1 py-3 transition-colors hover:text-deep hover:underline hover:underline-offset-4 lg:min-h-[44px] lg:w-auto lg:py-2" aria-expanded="false" aria-controls="sub-directory">Member directory <svg aria-hidden="true" viewBox="0 0 20 20" class="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[open=true]:rotate-180" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l5 5 5-5"/></svg></button>
-            <ul id="sub-directory" class="mb-3 ml-1 hidden border-l-4 border-mint pl-2 font-medium group-data-[open=true]:block lg:absolute lg:left-0 lg:top-full lg:z-30 lg:mb-0 lg:ml-0 lg:mt-0 lg:block lg:min-w-[250px] lg:translate-y-2 lg:rounded-xl lg:border-0 lg:bg-white lg:p-2 lg:opacity-0 lg:shadow-lg lg:ring-1 lg:ring-ink/15 lg:invisible lg:transition lg:duration-200 lg:ease-out lg:group-data-[open=true]:visible lg:group-data-[open=true]:translate-y-0 lg:group-data-[open=true]:opacity-100">
-                <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60 hover:underline hover:underline-offset-4" href="#directory">Search businesses</a></li>
-                <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60 hover:underline hover:underline-offset-4" href="#categories">Browse by category</a></li>
-            </ul>
-            </li>
-            <li class="group relative border-b border-ink/10 lg:border-0" data-sub>
-            <button type="button" class="flex min-h-[48px] w-full items-center justify-between gap-2 rounded-lg px-1 py-3 transition-colors hover:text-deep hover:underline hover:underline-offset-4 lg:min-h-[44px] lg:w-auto lg:py-2" aria-expanded="false" aria-controls="sub-sponsors">Sponsors <svg aria-hidden="true" viewBox="0 0 20 20" class="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[open=true]:rotate-180" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l5 5 5-5"/></svg></button>
-            <ul id="sub-sponsors" class="mb-3 ml-1 hidden border-l-4 border-mint pl-2 font-medium group-data-[open=true]:block lg:absolute lg:left-0 lg:top-full lg:z-30 lg:mb-0 lg:ml-0 lg:mt-0 lg:block lg:min-w-[250px] lg:translate-y-2 lg:rounded-xl lg:border-0 lg:bg-white lg:p-2 lg:opacity-0 lg:shadow-lg lg:ring-1 lg:ring-ink/15 lg:invisible lg:transition lg:duration-200 lg:ease-out lg:group-data-[open=true]:visible lg:group-data-[open=true]:translate-y-0 lg:group-data-[open=true]:opacity-100">
-                <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60 hover:underline hover:underline-offset-4" href="#sponsors">Our sponsors</a></li>
-                <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60 hover:underline hover:underline-offset-4" href="#join">Become a sponsor</a></li>
-            </ul>
-            </li>
-            <li class="py-4 lg:py-0"><a class="btn btn-primary w-full !min-h-[44px] !py-2 lg:w-auto" href="#join">Join the chamber</a></li>
-        </ul>
-        </nav>
+      </span>
+      <span class="logo-text">Selph Chamber</span>
+    </a>
+
+    <button id="menu-btn" type="button" class="menu-btn-border inline-flex min-h-[48px] min-w-[48px] items-center justify-center rounded-lg border-2 px-3 font-semibold transition-colors hover:bg-white/10 lg:hidden" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle menu">
+      <span class="hamburger-icon" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+
+    <nav id="site-nav" aria-label="Main" class="hidden w-full data-[open=true]:block lg:block lg:w-auto">
+      <ul class="flex flex-col text-base font-semibold lg:flex-row lg:items-center lg:gap-x-3 xl:gap-x-5 lg:text-[15px]">
+        <li class="group relative border-b border-white/20 lg:border-0" data-sub>
+          <button type="button" class="nav-link flex min-h-[48px] w-full items-center justify-between gap-2 rounded-lg px-1 py-3 transition-colors lg:min-h-[44px] lg:w-auto lg:py-2" aria-expanded="false" aria-controls="sub-membership">
+            Membership
+            <svg aria-hidden="true" viewBox="0 0 20 20" class="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[open=true]:rotate-180" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l5 5 5-5"/></svg>
+          </button>
+          <ul id="sub-membership" class="mb-3 ml-1 hidden border-l-4 border-mint pl-2 font-medium text-ink group-data-[open=true]:block lg:absolute lg:left-0 lg:top-full lg:z-30 lg:mb-0 lg:ml-0 lg:mt-0 lg:block lg:min-w-[250px] lg:translate-y-2 lg:rounded-xl lg:border-0 lg:bg-white lg:p-2 lg:opacity-0 lg:shadow-lg lg:ring-1 lg:ring-ink/15 lg:invisible lg:transition lg:duration-200 lg:ease-out lg:group-data-[open=true]:visible lg:group-data-[open=true]:translate-y-0 lg:group-data-[open=true]:opacity-100">
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="#why-join">Why join</a></li>
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="#leadership">Leadership program</a></li>
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="#new-title">New member luncheon</a></li>
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="#join">Apply to join</a></li>
+          </ul>
+        </li>
+        <li class="group relative border-b border-white/20 lg:border-0" data-sub>
+          <button type="button" class="nav-link flex min-h-[48px] w-full items-center justify-between gap-2 rounded-lg px-1 py-3 transition-colors lg:min-h-[44px] lg:w-auto lg:py-2" aria-expanded="false" aria-controls="sub-events">
+            Events
+            <svg aria-hidden="true" viewBox="0 0 20 20" class="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[open=true]:rotate-180" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l5 5 5-5"/></svg>
+          </button>
+          <ul id="sub-events" class="mb-3 ml-1 hidden border-l-4 border-mint pl-2 font-medium text-ink group-data-[open=true]:block lg:absolute lg:left-0 lg:top-full lg:z-30 lg:mb-0 lg:ml-0 lg:mt-0 lg:block lg:min-w-[250px] lg:translate-y-2 lg:rounded-xl lg:border-0 lg:bg-white lg:p-2 lg:opacity-0 lg:shadow-lg lg:ring-1 lg:ring-ink/15 lg:invisible lg:transition lg:duration-200 lg:ease-out lg:group-data-[open=true]:visible lg:group-data-[open=true]:translate-y-0 lg:group-data-[open=true]:opacity-100">
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="#this-month">This month</a></li>
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="#events">Looking ahead</a></li>
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="#festival">Community Festival</a></li>
+          </ul>
+        </li>
+        <li class="group relative border-b border-white/20 lg:border-0" data-sub>
+          <button type="button" class="nav-link flex min-h-[48px] w-full items-center justify-between gap-2 rounded-lg px-1 py-3 transition-colors lg:min-h-[44px] lg:w-auto lg:py-2" aria-expanded="false" aria-controls="sub-directory">
+            Directory
+            <svg aria-hidden="true" viewBox="0 0 20 20" class="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[open=true]:rotate-180" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l5 5 5-5"/></svg>
+          </button>
+          <ul id="sub-directory" class="mb-3 ml-1 hidden border-l-4 border-mint pl-2 font-medium text-ink group-data-[open=true]:block lg:absolute lg:left-0 lg:top-full lg:z-30 lg:mb-0 lg:ml-0 lg:mt-0 lg:block lg:min-w-[250px] lg:translate-y-2 lg:rounded-xl lg:border-0 lg:bg-white lg:p-2 lg:opacity-0 lg:shadow-lg lg:ring-1 lg:ring-ink/15 lg:invisible lg:transition lg:duration-200 lg:ease-out lg:group-data-[open=true]:visible lg:group-data-[open=true]:translate-y-0 lg:group-data-[open=true]:opacity-100">
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="#directory">Search businesses</a></li>
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="#categories">Browse by category</a></li>
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="#news">Welcome new members</a></li>
+          </ul>
+        </li>
+        <li class="group relative border-b border-white/20 lg:border-0" data-sub>
+          <button type="button" class="nav-link flex min-h-[48px] w-full items-center justify-between gap-2 rounded-lg px-1 py-3 transition-colors lg:min-h-[44px] lg:w-auto lg:py-2" aria-expanded="false" aria-controls="sub-community">
+            Community
+            <svg aria-hidden="true" viewBox="0 0 20 20" class="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[open=true]:rotate-180" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l5 5 5-5"/></svg>
+          </button>
+          <ul id="sub-community" class="mb-3 ml-1 hidden border-l-4 border-mint pl-2 font-medium text-ink group-data-[open=true]:block lg:absolute lg:left-0 lg:top-full lg:z-30 lg:mb-0 lg:ml-0 lg:mt-0 lg:block lg:min-w-[250px] lg:translate-y-2 lg:rounded-xl lg:border-0 lg:bg-white lg:p-2 lg:opacity-0 lg:shadow-lg lg:ring-1 lg:ring-ink/15 lg:invisible lg:transition lg:duration-200 lg:ease-out lg:group-data-[open=true]:visible lg:group-data-[open=true]:translate-y-0 lg:group-data-[open=true]:opacity-100">
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="#communities">Our communities</a></li>
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="#guide">Community guide</a></li>
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="#news">News and spotlights</a></li>
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="#sponsors">Our partners</a></li>
+          </ul>
+        </li>
+        <li class="group relative border-b border-white/20 lg:border-0" data-sub>
+          <button type="button" class="nav-link flex min-h-[48px] w-full items-center justify-between gap-2 rounded-lg px-1 py-3 transition-colors lg:min-h-[44px] lg:w-auto lg:py-2" aria-expanded="false" aria-controls="sub-about">
+            About
+            <svg aria-hidden="true" viewBox="0 0 20 20" class="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[open=true]:rotate-180" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l5 5 5-5"/></svg>
+          </button>
+          <ul id="sub-about" class="mb-3 ml-1 hidden border-l-4 border-mint pl-2 font-medium text-ink group-data-[open=true]:block lg:absolute lg:left-0 lg:top-full lg:z-30 lg:mb-0 lg:ml-0 lg:mt-0 lg:block lg:min-w-[250px] lg:translate-y-2 lg:rounded-xl lg:border-0 lg:bg-white lg:p-2 lg:opacity-0 lg:shadow-lg lg:ring-1 lg:ring-ink/15 lg:invisible lg:transition lg:duration-200 lg:ease-out lg:group-data-[open=true]:visible lg:group-data-[open=true]:translate-y-0 lg:group-data-[open=true]:opacity-100">
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="#president">Meet our president</a></li>
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="#contact">Contact us</a></li>
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="#economic-development">Economic development</a></li>
+          </ul>
+        </li>
+        <li class="py-4 lg:py-0">
+          <a class="btn btn-primary w-full !min-h-[44px] !py-2 lg:w-auto" href="#join">Join the chamber</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section id="hero" class="relative min-h-[70vh] overflow-hidden" aria-labelledby="hero-title">
+    <div class="absolute inset-0">
+      <img
+        src="https://images.pexels.com/photos/8761637/pexels-photo-8761637.jpeg?auto=compress&cs=tinysrgb&w=1920"
+        alt="Diverse professionals in business attire networking and discussing during a conference break"
+        class="h-full w-full object-cover object-center"
+        width="1920"
+        height="1280"
+        fetchpriority="high"
+      >
+      <div class="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/65 to-ink/40"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-ink/30"></div>
     </div>
-    </header>
 
-    <main id="main">
-
-    <section class="relative overflow-hidden bg-gradient-to-br from-[#D9F4EF] via-[#E8F7F4] to-[#D8EFF8]" aria-labelledby="hero-title">
-        <div class="wrap relative z-10 grid items-center gap-10 py-14 lg:grid-cols-[1.15fr_1fr] lg:py-20">
-        <div>
-            <h1 id="hero-title" class="hero-in d1 max-w-[16ch] text-4xl font-extrabold leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-6xl">
-            Where Bluebonnet businesses grow together.
-            </h1>
-            <p class="hero-in d2 mt-6 max-w-[56ch] text-lg">
-            Join the local owners who meet, learn, and promote each other all year. Come to a mixer, find a neighbor in our directory, and put your business in front of the community.
-            </p>
-            <div class="hero-in d3 mt-8 flex flex-wrap gap-4">
-            <a class="btn btn-primary" href="#join">Join the chamber</a>
-            <a class="btn btn-quiet" href="#events">See upcoming events</a>
+    <div class="hero-inner relative wrap grid items-center gap-10 pb-20 lg:grid-cols-[1.15fr_1fr] lg:pb-28">
+      <div>
+        <p class="hero-in d1 text-sm font-semibold uppercase tracking-[0.18em] text-teal">Your business community</p>
+        <h1 id="hero-title" class="hero-in d1 mt-3 max-w-[16ch] text-4xl font-extrabold leading-[1.05] text-white sm:text-5xl lg:text-6xl">
+          Where local businesses grow together.
+        </h1>
+        <p class="hero-in d2 mt-6 max-w-[56ch] text-lg text-white/90">
+          Join the owners who meet, learn, and promote each other all year. Come to a mixer, find a neighbor in our directory, and put your business in front of the community.
+        </p>
+        <div class="hero-in d3 mt-8 flex flex-wrap gap-4">
+          <a class="btn btn-primary" href="#join">Join the chamber</a>
+          <a class="btn btn-light" href="#events">See upcoming events</a>
+        </div>
+      </div>
+      <div class="hero-in d4 rounded-2xl bg-white/95 p-6 shadow-xl ring-1 ring-white/20 backdrop-blur-sm">
+        <h2 id="this-month" class="scroll-mt-nav text-xl font-extrabold text-deep">Coming up this month</h2>
+        <ul class="mt-4 divide-y divide-ink/10">
+          <li class="-mx-2 flex gap-4 rounded-lg px-2 py-4 transition-colors duration-200 hover:bg-lime/70">
+            <div class="w-14 shrink-0 rounded-lg bg-lime py-2 text-center" aria-hidden="true">
+              <div class="text-xs font-semibold">Nov</div>
+              <div class="font-display text-2xl font-extrabold leading-none">13</div>
             </div>
-        </div>
-
-        <div class="hero-in d4 rounded-3xl border border-white/80 bg-white/95 p-6 shadow-2xl shadow-[#0A2B3A]/10 ring-1 ring-ink/5 sm:p-8">
-            <h2 id="this-month" class="scroll-mt-6 text-xl font-extrabold text-deep">Coming up this month</h2>
-            <ul class="mt-4 divide-y divide-ink/10">
-            <li class="-mx-2 flex gap-4 rounded-lg px-2 py-4 transition-colors duration-200 hover:bg-lime/70">
-                <div class="w-14 shrink-0 rounded-lg bg-lime py-2 text-center" aria-hidden="true">
-                <div class="text-xs font-semibold">Nov</div><div class="font-display text-2xl font-extrabold leading-none">13</div>
-                </div>
-                <div class="flex-1">
-                <h3 class="font-display text-lg font-bold leading-snug">Morning mixer at Harper Hardware</h3>
-                <p class="text-sm">Thursday, November 13, 8:00 to 9:30 a.m.</p>
-                <a class="link text-sm" href="#">Register for the morning mixer<span class="sr-only"> on November 13</span></a>
-                </div>
-            </li>
-            <li class="-mx-2 flex gap-4 rounded-lg px-2 py-4 transition-colors duration-200 hover:bg-lime/70">
-                <div class="w-14 shrink-0 rounded-lg bg-lime py-2 text-center" aria-hidden="true">
-                <div class="text-xs font-semibold">Nov</div><div class="font-display text-2xl font-extrabold leading-none">20</div>
-                </div>
-                <div class="flex-1">
-                <h3 class="font-display text-lg font-bold leading-snug">New member luncheon</h3>
-                <p class="text-sm">Thursday, November 20, 11:30 a.m. to 1:00 p.m.</p>
-                <a class="link text-sm" href="#">Register for the new member luncheon<span class="sr-only"> on November 20</span></a>
-                </div>
-            </li>
-            <li class="-mx-2 flex gap-4 rounded-lg px-2 py-4 transition-colors duration-200 hover:bg-lime/70">
-                <div class="w-14 shrink-0 rounded-lg bg-lime py-2 text-center" aria-hidden="true">
-                <div class="text-xs font-semibold">Dec</div><div class="font-display text-2xl font-extrabold leading-none">04</div>
-                </div>
-                <div class="flex-1">
-                <h3 class="font-display text-lg font-bold leading-snug">Holiday parade and tree lighting</h3>
-                <p class="text-sm">Thursday, December 4, 5:30 p.m., Main Street</p>
-                <a class="link text-sm" href="#">Volunteer or enter a float<span class="sr-only"> for the holiday parade</span></a>
-                </div>
-            </li>
-            </ul>
-        </div>
-        </div>
-
-        <div class="relative isolate min-h-[260px] overflow-hidden sm:min-h-[320px]">
-        <img src="https://kimi-web-img.kimi.ai/img/images.squarespace-cdn.com/b8821f8e8af7096544f85df5d81581676cf5c6e3.jpg" alt="Local business owners collaborating around a table" class="absolute inset-0 -z-20 h-full w-full object-cover" loading="lazy" decoding="async">
-        <div class="absolute inset-0 -z-10 bg-gradient-to-r from-[#062B3A]/95 via-[#063B4B]/75 to-[#063B4B]/20"></div>
-        <div class="wrap flex min-h-[260px] items-end py-10 sm:min-h-[320px] sm:items-center sm:py-14">
-            <div class="max-w-2xl text-white" data-reveal>
-            <p class="text-sm font-bold uppercase tracking-[.18em] text-[#B8E9F5]">Built by community</p>
-            <h2 class="mt-3 font-display text-3xl font-extrabold leading-tight sm:text-4xl">Local connections. Lasting momentum.</h2>
-            <p class="mt-4 max-w-xl text-base leading-relaxed text-white sm:text-lg">Meet the people behind the businesses, share what you do, and help our local economy thrive.</p>
-            </div>
-        </div>
-        </div>
-    </section>
-
-    <section id="why-join" class="py-16 lg:py-20" aria-labelledby="why-title">
-        <div class="wrap">
-        <h2 data-reveal id="why-title" class="max-w-[24ch] text-3xl font-extrabold text-deep sm:text-4xl">What membership gets your business</h2>
-        <p data-reveal style="--d:.08s" class="mt-4 max-w-[60ch] text-lg">Our members get connections, customers, and a stronger voice in the community.</p>
-
-        <div class="mt-10 grid gap-x-10 gap-y-10 md:grid-cols-3">
-            <article data-reveal style="--d:0.00s" class="group rounded-2xl border border-ink/10 border-t-4 border-sky bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-            <div aria-hidden="true" class="mb-4 grid h-16 w-16 place-items-center rounded-2xl transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110 bg-lime"><svg viewBox="0 0 40 40" class="h-9 w-9" fill="none" stroke="#0A2B3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 36s11-9.5 11-19a11 11 0 0 0-22 0c0 9.5 11 19 11 19z" fill="#27C2F8"/><circle cx="20" cy="17" r="4" fill="#fff"/></svg></div>
-            <h3 class="text-xl font-bold">Be found by neighbors</h3>
-            <p class="mt-2">Your business listing appears in a searchable directory that customers use to find local help.</p>
-            </article>
-            <article data-reveal style="--d:0.12s" class="group rounded-2xl border border-ink/10 border-t-4 border-teal bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-            <div aria-hidden="true" class="mb-4 grid h-16 w-16 place-items-center rounded-2xl transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110 bg-teal"><svg viewBox="0 0 40 40" class="h-9 w-9" fill="none" stroke="#0A2B3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="14" r="5" fill="#27C2F8"/><circle cx="27" cy="14" r="5" fill="#fff"/><path d="M4 33c0-6 4-10 9-10s9 4 9 10M18 33c0-6 4-10 9-10s9 4 9 10"/></svg></div>
-            <h3 class="text-xl font-bold">Meet people who buy local</h3>
-            <p class="mt-2">Monthly mixers, ribbon cuttings, and a yearly gala put you in the room with other owners.</p>
-            </article>
-            <article data-reveal style="--d:0.24s" class="group rounded-2xl border border-ink/10 border-t-4 border-mint bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-            <div aria-hidden="true" class="mb-4 grid h-16 w-16 place-items-center rounded-2xl transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110 bg-mint"><svg viewBox="0 0 40 40" class="h-9 w-9" fill="none" stroke="#0A2B3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 5l4.6 9.4 10.4 1.5-7.5 7.3 1.8 10.3L20 28.600 10.700 33.500l1.800-10.300L5 15.900l10.400-1.500z" fill="#27C2F8"/></svg></div>
-            <h3 class="text-xl font-bold">Get seen all year</h3>
-            <p class="mt-2">Sponsor placements rotate fairly across the site, so every tier gets real exposure.</p>
-            </article>
-        </div>
-
-        <aside data-reveal class="mt-12 rounded-2xl border border-[#B5D9D2] bg-gradient-to-r from-[#E5F7F0] to-[#E5F2FA] p-6 sm:p-8" aria-labelledby="new-title">
-            <h3 id="new-title" class="text-xl font-bold">New to the area?</h3>
-            <p class="mt-2 max-w-[70ch]">Join us at the next new member luncheon. Guests are welcome, and lunch is on us for first time visitors.</p>
-            <a class="link mt-3 inline-block" href="#events">See the luncheon date</a>
-        </aside>
-        </div>
-    </section>
-
-    <section id="events" class="bg-gradient-to-br from-[#D7F1ED] via-[#E4F4F4] to-[#DDEFF8] py-16 lg:py-20" aria-labelledby="events-title">
-        <div class="wrap grid gap-10 lg:grid-cols-[1fr_1.4fr]">
-        <div data-reveal>
-            <h2 id="events-title" class="text-3xl font-extrabold sm:text-4xl">Events all year long</h2>
-            <p class="mt-4 max-w-[48ch] text-lg">From morning mixers to the holiday parade, there is always a reason to get together. Register online in a few taps.</p>
-            <a class="btn btn-primary mt-6" href="#">View the full calendar</a>
-            <svg aria-hidden="true" focusable="false" viewBox="0 0 440 70" class="sway mt-8 w-full max-w-md"><path d="M10 14 Q220 60 430 14" fill="none" stroke="#0A2B3A" stroke-width="2"/><path d="M20 17.0 l16 0 l-8 22z" fill="#0E7EA6"/><path d="M58 22.0 l16 0 l-8 22z" fill="#27C2F8"/><path d="M96 26.0 l16 0 l-8 22z" fill="#0A2B3A"/><path d="M134 28.8 l16 0 l-8 22z" fill="#FFFFFF"/><path d="M172 30.4 l16 0 l-8 22z" fill="#0E7EA6"/><path d="M210 31.0 l16 0 l-8 22z" fill="#27C2F8"/><path d="M248 30.4 l16 0 l-8 22z" fill="#0A2B3A"/><path d="M286 28.8 l16 0 l-8 22z" fill="#FFFFFF"/><path d="M324 26.0 l16 0 l-8 22z" fill="#0E7EA6"/><path d="M362 22.0 l16 0 l-8 22z" fill="#27C2F8"/><path d="M400 17.0 l16 0 l-8 22z" fill="#0A2B3A"/></svg>
-            <figure class="mt-8 overflow-hidden rounded-2xl shadow-xl ring-1 ring-ink/10">
-            <img src="https://kimi-web-img.kimi.ai/img/www.meewiz.com/33a9905512e1eb8a5813ff154daad91383406da7.webp" alt="People talking and connecting at a community gathering" class="h-52 w-full object-cover sm:h-60" loading="lazy" decoding="async">
-            </figure>
-        </div>
-        <div data-reveal style="--d:.12s" class="rounded-3xl border border-white/80 bg-white p-6 shadow-xl shadow-[#0A2B3A]/10 ring-1 ring-ink/5 sm:p-8">
-            <h3 class="text-xl font-extrabold text-deep">Looking ahead</h3>
-            <ul class="mt-4 divide-y divide-ink/10">
-            <li class="-mx-2 flex items-baseline justify-between gap-4 rounded-lg px-2 py-3 transition-colors duration-200 hover:bg-lime/70"><span><span class="font-semibold">Business after hours</span><br><span class="text-sm">Wednesday, December 10, 5:30 p.m.</span></span><a class="link text-sm" href="#">Details<span class="sr-only"> for business after hours</span></a></li>
-            <li class="-mx-2 flex items-baseline justify-between gap-4 rounded-lg px-2 py-3 transition-colors duration-200 hover:bg-lime/70"><span><span class="font-semibold">Ribbon cutting at Cedar and Sage Cafe</span><br><span class="text-sm">Friday, December 12, 10:00 a.m.</span></span><a class="link text-sm" href="#">Details<span class="sr-only"> for the ribbon cutting</span></a></li>
-            <li class="-mx-2 flex items-baseline justify-between gap-4 rounded-lg px-2 py-3 transition-colors duration-200 hover:bg-lime/70"><span><span class="font-semibold">State of the community breakfast</span><br><span class="text-sm">Thursday, January 8, 7:30 a.m.</span></span><a class="link text-sm" href="#">Register<span class="sr-only"> for the breakfast</span></a></li>
-            <li class="-mx-2 flex items-baseline justify-between gap-4 rounded-lg px-2 py-3 transition-colors duration-200 hover:bg-lime/70"><span><span class="font-semibold">Annual awards gala</span><br><span class="text-sm">Saturday, February 14, 6:30 p.m.</span></span><a class="link text-sm" href="#">Get tickets<span class="sr-only"> for the awards gala</span></a></li>
-            </ul>
-        </div>
-        </div>
-    </section>
-
-    <section id="directory" class="bg-gradient-to-b from-white to-[#F0F8FA] py-16 lg:py-20" aria-labelledby="dir-title">
-        <div class="wrap">
-        <h2 data-reveal id="dir-title" class="text-3xl font-extrabold text-deep sm:text-4xl">Find a local member business</h2>
-        <form data-reveal style="--d:.08s" role="search" action="#" class="mt-6 flex max-w-2xl flex-col gap-3 sm:flex-row sm:items-end">
             <div class="flex-1">
-            <label for="dir-q" class="block font-semibold">Business name or category</label>
-            <input id="dir-q" type="text" placeholder="For example, plumber or bakery"
-                    class="mt-1 min-h-[48px] w-full rounded-lg border-2 border-[#526A73] bg-white px-4 text-base transition-colors placeholder:text-[#526A73] focus:border-[#07516B] focus:ring-2 focus:ring-[#B8E9F5]">
+              <h3 class="font-display text-lg font-bold leading-snug">Morning mixer at Harper Hardware</h3>
+              <p class="text-sm">Thursday, November 13, 8:00 to 9:30 a.m.</p>
+              <a class="link text-sm" href="#">Register for the morning mixer<span class="sr-only"> on November 13</span></a>
             </div>
-            <button type="submit" class="btn btn-primary">Search the directory</button>
-        </form>
-        <ul data-reveal style="--d:.16s" id="categories" class="mt-8 flex flex-wrap gap-3" aria-label="Popular categories">
-            <li><a class="inline-flex min-h-[44px] items-center rounded-full border-2 border-ink/30 px-4 font-semibold transition duration-200 hover:-translate-y-0.5 hover:border-ink hover:bg-mint" href="#">Restaurants</a></li>
-            <li><a class="inline-flex min-h-[44px] items-center rounded-full border-2 border-ink/30 px-4 font-semibold transition duration-200 hover:-translate-y-0.5 hover:border-ink hover:bg-mint" href="#">Home services</a></li>
-            <li><a class="inline-flex min-h-[44px] items-center rounded-full border-2 border-ink/30 px-4 font-semibold transition duration-200 hover:-translate-y-0.5 hover:border-ink hover:bg-mint" href="#">Health and wellness</a></li>
-            <li><a class="inline-flex min-h-[44px] items-center rounded-full border-2 border-ink/30 px-4 font-semibold transition duration-200 hover:-translate-y-0.5 hover:border-ink hover:bg-mint" href="#">Professional services</a></li>
+          </li>
+          <li class="-mx-2 flex gap-4 rounded-lg px-2 py-4 transition-colors duration-200 hover:bg-lime/70">
+            <div class="w-14 shrink-0 rounded-lg bg-lime py-2 text-center" aria-hidden="true">
+              <div class="text-xs font-semibold">Nov</div>
+              <div class="font-display text-2xl font-extrabold leading-none">20</div>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-display text-lg font-bold leading-snug">New member luncheon</h3>
+              <p class="text-sm">Thursday, November 20, 11:30 a.m. to 1:00 p.m.</p>
+              <a class="link text-sm" href="#">Register for the new member luncheon<span class="sr-only"> on November 20</span></a>
+            </div>
+          </li>
+          <li class="-mx-2 flex gap-4 rounded-lg px-2 py-4 transition-colors duration-200 hover:bg-lime/70">
+            <div class="w-14 shrink-0 rounded-lg bg-lime py-2 text-center" aria-hidden="true">
+              <div class="text-xs font-semibold">Dec</div>
+              <div class="font-display text-2xl font-extrabold leading-none">04</div>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-display text-lg font-bold leading-snug">Holiday parade and tree lighting</h3>
+              <p class="text-sm">Thursday, December 4, 5:30 p.m., Main Street</p>
+              <a class="link text-sm" href="#">Volunteer or enter a float<span class="sr-only"> for the holiday parade</span></a>
+            </div>
+          </li>
         </ul>
-        </div>
-    </section>
-
-    <section id="sponsors" class="border-y border-ink/10 bg-white py-14" aria-labelledby="sp-title">
-        <div class="wrap">
-        <h2 data-reveal id="sp-title" class="text-2xl font-extrabold text-deep">Thank you to our sponsors</h2>
-        <ul data-reveal style="--d:.1s" class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
-            <li class="grid h-24 place-items-center rounded-xl border border-[#B5D9D2] bg-gradient-to-br from-[#EAF8F3] to-[#E5F2FA] px-3 text-center transition duration-200 hover:-translate-y-1 hover:shadow-lg"><span><span class="block font-display text-lg font-bold">Harper Hardware</span><span class="block text-sm">Presenting sponsor</span></span></li>
-            <li class="grid h-24 place-items-center rounded-xl border border-[#B5D9D2] bg-gradient-to-br from-[#EAF8F3] to-[#E5F2FA] px-3 text-center transition duration-200 hover:-translate-y-1 hover:shadow-lg"><span><span class="block font-display text-lg font-bold">Prairie Savings Bank</span><span class="block text-sm">Gold sponsor</span></span></li>
-            <li class="grid h-24 place-items-center rounded-xl border border-[#B5D9D2] bg-gradient-to-br from-[#EAF8F3] to-[#E5F2FA] px-3 text-center transition duration-200 hover:-translate-y-1 hover:shadow-lg"><span><span class="block font-display text-lg font-bold">Lone Oak Dental</span><span class="block text-sm">Gold sponsor</span></span></li>
-            <li class="grid h-24 place-items-center rounded-xl border border-[#B5D9D2] bg-gradient-to-br from-[#EAF8F3] to-[#E5F2FA] px-3 text-center transition duration-200 hover:-translate-y-1 hover:shadow-lg"><span><span class="block font-display text-lg font-bold">Cedar and Sage Cafe</span><span class="block text-sm">Silver sponsor</span></span></li>
-        </ul>
-        </div>
-    </section>
-
-    <section id="join" class="relative isolate overflow-hidden bg-gradient-to-br from-[#07516B] via-[#08617F] to-[#0A2B3A] pb-16 pt-16 text-white lg:pt-20" aria-labelledby="join-title">
-        <div aria-hidden="true" class="pointer-events-none absolute -right-24 -top-32 -z-10 h-96 w-96 rounded-full bg-[#8BDCE0]/15 blur-3xl"></div>
-        <div class="wrap grid items-center gap-8 lg:grid-cols-[1.3fr_1fr]">
-        <div data-reveal>
-            <h2 id="join-title" class="text-3xl font-extrabold sm:text-4xl">Ready to join your neighbors?</h2>
-            <p class="mt-4 max-w-[52ch] text-lg">Applying takes about a minute. A member of our team will call you within two business days to welcome you.</p>
-        </div>
-        <div data-reveal style="--d:.14s" class="flex flex-wrap gap-4 lg:justify-end">
-            <a class="btn bg-white text-ink shadow-lg hover:bg-[#E9F8CD]" href="#">Start your membership application</a>
-            <a class="btn border-2 border-white text-white hover:bg-white hover:text-ink" href="#">Talk with our team</a>
-        </div>
-        </div>
-
-
-    </section>
-    </main>
-
-    <footer class="bg-gradient-to-br from-[#0A2B3A] to-[#061D29] text-white">
-    <div class="wrap grid gap-8 py-12 md:grid-cols-3">
-        <div>
-        <p class="font-display text-xl font-extrabold">Bluebonnet Area Chamber of Commerce</p>
-        <address class="mt-3 not-italic">100 Main Street<br>Anytown, Texas 75000<br><a class="underline underline-offset-4" href="tel:+15555550100">(555) 555-0100</a></address>
-        </div>
-        <nav aria-label="Footer">
-        <ul class="space-y-2">
-            <li><a class="inline-block py-1 underline underline-offset-4 transition-colors hover:text-lime" href="#">Accessibility statement</a></li>
-            <li><a class="inline-block py-1 underline underline-offset-4 transition-colors hover:text-lime" href="#">Report a website problem</a></li>
-            <li><a class="inline-block py-1 underline underline-offset-4 transition-colors hover:text-lime" href="#">Privacy policy</a></li>
-        </ul>
-        </nav>
-        <p class="text-sm">Copyright 2026 Bluebonnet Area Chamber of Commerce. All rights reserved.</p>
     </div>
-    </footer>
+  </section>
 
-    <script>
-    (function () {
-    var btn = document.getElementById('menu-btn');
-    var nav = document.getElementById('site-nav');
-    var desktop = window.matchMedia('(min-width: 1024px)');
-    var items = Array.prototype.slice.call(document.querySelectorAll('[data-sub]'));
-    var timers = new WeakMap();
+  <!-- Quick links -->
+  <section class="py-14 lg:py-16" aria-labelledby="quick-title">
+    <div class="wrap">
+      <div class="max-w-2xl">
+        <h2 id="quick-title" data-reveal class="text-3xl font-extrabold text-deep sm:text-4xl">Find what you need</h2>
+        <p data-reveal style="--d:.06s" class="mt-3 text-lg text-ink/80">
+          Quick paths to networking, promotion, growth, and community resources.
+        </p>
+      </div>
 
-    function setSub(li, open) {
-        li.setAttribute('data-open', String(open));
-        li.querySelector('button').setAttribute('aria-expanded', String(open));
-        if (!open) delete li.dataset.kb;
-    }
-    function closeAll(except) {
-        items.forEach(function (li) { if (li !== except) setSub(li, false); });
-    }
-    function setMenu(open) {
-        nav.setAttribute('data-open', String(open));
-        btn.setAttribute('aria-expanded', String(open));
-        if (!open) closeAll();
-    }
+      <ul class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <li data-reveal style="--d:0.00s">
+          <a href="#why-join" class="group flex h-full flex-col rounded-2xl border border-ink/10 bg-white p-6 shadow-sm ring-1 ring-ink/5 transition duration-200 hover:-translate-y-1 hover:border-deep/20 hover:shadow-md">
+            <span class="grid h-12 w-12 place-items-center rounded-xl bg-mint transition-transform duration-300 group-hover:scale-110">
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="#0A2B3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="20" r="2"/><path d="M7 7l3 3M17 7l-3 3M12 15v3"/></svg>
+            </span>
+            <span class="mt-5 font-display text-lg font-bold leading-tight">Network</span>
+            <span class="mt-1.5 text-sm text-ink/75">Mixers, luncheons, and after hours</span>
+          </a>
+        </li>
+        <li data-reveal style="--d:0.05s">
+          <a href="#news" class="group flex h-full flex-col rounded-2xl border border-ink/10 bg-white p-6 shadow-sm ring-1 ring-ink/5 transition duration-200 hover:-translate-y-1 hover:border-deep/20 hover:shadow-md">
+            <span class="grid h-12 w-12 place-items-center rounded-xl bg-teal transition-transform duration-300 group-hover:scale-110">
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="#0A2B3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4h3l7 4V6L7 10z"/><path d="M17 9a4 4 0 0 1 0 6"/></svg>
+            </span>
+            <span class="mt-5 font-display text-lg font-bold leading-tight">Promote</span>
+            <span class="mt-1.5 text-sm text-ink/75">Spotlights, sponsorships, and ribbon cuttings</span>
+          </a>
+        </li>
+        <li data-reveal style="--d:0.10s">
+          <a href="#leadership" class="group flex h-full flex-col rounded-2xl border border-ink/10 bg-white p-6 shadow-sm ring-1 ring-ink/5 transition duration-200 hover:-translate-y-1 hover:border-deep/20 hover:shadow-md">
+            <span class="grid h-12 w-12 place-items-center rounded-xl bg-lime transition-transform duration-300 group-hover:scale-110">
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="#0A2B3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16M6 15l4-4 3 3 5-6"/><path d="M15 8h3v3"/></svg>
+            </span>
+            <span class="mt-5 font-display text-lg font-bold leading-tight">Grow</span>
+            <span class="mt-1.5 text-sm text-ink/75">Leadership and training for owners</span>
+          </a>
+        </li>
+        <li data-reveal style="--d:0.15s">
+          <a href="#directory" class="group flex h-full flex-col rounded-2xl border border-ink/10 bg-white p-6 shadow-sm ring-1 ring-ink/5 transition duration-200 hover:-translate-y-1 hover:border-deep/20 hover:shadow-md">
+            <span class="grid h-12 w-12 place-items-center rounded-xl bg-mint transition-transform duration-300 group-hover:scale-110">
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="#0A2B3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4-4"/></svg>
+            </span>
+            <span class="mt-5 font-display text-lg font-bold leading-tight">Find a business</span>
+            <span class="mt-1.5 text-sm text-ink/75">Search the member directory</span>
+          </a>
+        </li>
+        <li data-reveal style="--d:0.00s">
+          <a href="#events" class="group flex h-full flex-col rounded-2xl border border-ink/10 bg-white p-6 shadow-sm ring-1 ring-ink/5 transition duration-200 hover:-translate-y-1 hover:border-deep/20 hover:shadow-md">
+            <span class="grid h-12 w-12 place-items-center rounded-xl bg-teal transition-transform duration-300 group-hover:scale-110">
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="#0A2B3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>
+            </span>
+            <span class="mt-5 font-display text-lg font-bold leading-tight">Event calendar</span>
+            <span class="mt-1.5 text-sm text-ink/75">See what is happening this month</span>
+          </a>
+        </li>
+        <li data-reveal style="--d:0.05s">
+          <a href="#guide" class="group flex h-full flex-col rounded-2xl border border-ink/10 bg-white p-6 shadow-sm ring-1 ring-ink/5 transition duration-200 hover:-translate-y-1 hover:border-deep/20 hover:shadow-md">
+            <span class="grid h-12 w-12 place-items-center rounded-xl bg-lime transition-transform duration-300 group-hover:scale-110">
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="#0A2B3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M8 17h10"/></svg>
+            </span>
+            <span class="mt-5 font-display text-lg font-bold leading-tight">Community guide</span>
+            <span class="mt-1.5 text-sm text-ink/75">Our towns, economy, and members</span>
+          </a>
+        </li>
+        <li data-reveal style="--d:0.10s">
+          <a href="#economic-development" class="group flex h-full flex-col rounded-2xl border border-ink/10 bg-white p-6 shadow-sm ring-1 ring-ink/5 transition duration-200 hover:-translate-y-1 hover:border-deep/20 hover:shadow-md">
+            <span class="grid h-12 w-12 place-items-center rounded-xl bg-mint transition-transform duration-300 group-hover:scale-110">
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="#0A2B3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6M9 10h.01M15 10h.01"/></svg>
+            </span>
+            <span class="mt-5 font-display text-lg font-bold leading-tight">Economic development</span>
+            <span class="mt-1.5 text-sm text-ink/75">Regional insight and resources</span>
+          </a>
+        </li>
+        <li data-reveal style="--d:0.15s">
+          <a href="#economic-development" class="group flex h-full flex-col rounded-2xl border border-ink/10 bg-white p-6 shadow-sm ring-1 ring-ink/5 transition duration-200 hover:-translate-y-1 hover:border-deep/20 hover:shadow-md">
+            <span class="grid h-12 w-12 place-items-center rounded-xl bg-teal transition-transform duration-300 group-hover:scale-110">
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="#0A2B3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 4l9 6.5M5 9v11h14V9M9 20v-6h6v6"/></svg>
+            </span>
+            <span class="mt-5 font-display text-lg font-bold leading-tight">Relocate here</span>
+            <span class="mt-1.5 text-sm text-ink/75">Explore the area and plan your move</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
 
-    btn.addEventListener('click', function () { setMenu(nav.getAttribute('data-open') !== 'true'); });
+  <!-- Stats -->
+  <section class="bg-deep py-12 text-white" aria-label="The chamber at a glance">
+    <dl class="wrap grid grid-cols-2 gap-8 text-center lg:grid-cols-4">
+      <div data-reveal class="flex flex-col-reverse"><dt class="mt-1">Member businesses</dt><dd class="font-display text-5xl font-extrabold">430+</dd></div>
+      <div data-reveal style="--d:.08s" class="flex flex-col-reverse"><dt class="mt-1">Events each year</dt><dd class="font-display text-5xl font-extrabold">60</dd></div>
+      <div data-reveal style="--d:.16s" class="flex flex-col-reverse"><dt class="mt-1">Communities served</dt><dd class="font-display text-5xl font-extrabold">6</dd></div>
+      <div data-reveal style="--d:.24s" class="flex flex-col-reverse"><dt class="mt-1">Serving business since</dt><dd class="font-display text-5xl font-extrabold">1974</dd></div>
+    </dl>
+  </section>
 
-    items.forEach(function (li) {
-        var b = li.querySelector('button');
-        b.addEventListener('click', function (e) {
-        var open = b.getAttribute('aria-expanded') !== 'true';
-        if (desktop.matches && e.detail > 0) open = true;
-        closeAll(li);
-        setSub(li, open);
-        if (open && e.detail === 0) li.dataset.kb = '1';
-        });
-        li.addEventListener('mouseenter', function () {
-        if (!desktop.matches) return;
-        clearTimeout(timers.get(li));
-        closeAll(li);
-        setSub(li, true);
-        });
-        li.addEventListener('mouseleave', function () {
-        if (!desktop.matches) return;
-        timers.set(li, setTimeout(function () { if (li.dataset.kb !== '1') setSub(li, false); }, 160));
-        });
-        li.addEventListener('focusout', function (e) {
-        if (desktop.matches && !li.contains(e.relatedTarget)) setSub(li, false);
-        });
+  <!-- Featured festival -->
+  <section id="festival" class="scroll-mt-nav py-14 lg:py-16" aria-labelledby="feat-title">
+    <div class="wrap">
+      <div data-reveal class="grid overflow-hidden rounded-3xl bg-lime lg:grid-cols-[1fr_1.2fr]">
+        <div class="relative min-h-[220px] lg:min-h-0">
+          <img
+            src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Crowd at an outdoor community festival with food and gathering energy"
+            class="absolute inset-0 h-full w-full object-cover"
+            loading="lazy"
+            width="800"
+            height="600"
+          >
+          <div class="absolute inset-0 bg-ink/55"></div>
+          <div class="relative grid h-full place-items-center p-8 text-center text-white">
+            <p>
+              <span class="block text-sm font-semibold">Featured event, 2027</span>
+              <span class="mt-1 block font-display text-5xl font-extrabold leading-none">Apr 17 to 19</span>
+            </p>
+          </div>
+        </div>
+        <div class="p-6 sm:p-8">
+          <h2 id="feat-title" class="text-3xl font-extrabold">Community Festival</h2>
+          <p class="mt-2 max-w-[60ch]">Three days of live music, local food, and a market with member vendors up and down Main Street.</p>
+          <ul class="mt-4 grid gap-1 text-sm sm:grid-cols-3">
+            <li><strong>Friday</strong><br>4 to 10 p.m.</li>
+            <li><strong>Saturday</strong><br>10 a.m. to 10 p.m.</li>
+            <li><strong>Sunday</strong><br>Noon to 6 p.m.</li>
+          </ul>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a class="btn btn-primary" href="#">Learn more</a>
+            <a class="btn btn-quiet" href="#">Volunteer to help</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why join -->
+  <section id="why-join" class="scroll-mt-nav py-16 lg:py-20" aria-labelledby="why-title">
+    <div class="wrap">
+      <h2 data-reveal id="why-title" class="max-w-[24ch] text-3xl font-extrabold text-deep sm:text-4xl">What membership gets your business</h2>
+      <p data-reveal style="--d:.08s" class="mt-4 max-w-[60ch] text-lg">Our members get connections, customers, and a stronger voice in the community.</p>
+
+      <div class="mt-10 grid gap-x-10 gap-y-10 md:grid-cols-3">
+        <article data-reveal style="--d:0.00s" class="group border-t-4 border-sky pt-5">
+          <div aria-hidden="true" class="mb-4 grid h-16 w-16 place-items-center rounded-2xl bg-lime transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110">
+            <svg viewBox="0 0 40 40" class="h-9 w-9" fill="none" stroke="#0A2B3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 36s11-9.5 11-19a11 11 0 0 0-22 0c0 9.5 11 19 11 19z" fill="#27C2F8"/><circle cx="20" cy="17" r="4" fill="#fff"/></svg>
+          </div>
+          <h3 class="text-xl font-bold">Be found by neighbors</h3>
+          <p class="mt-2">Your business listing appears in a searchable directory that customers use to find local help.</p>
+        </article>
+        <article data-reveal style="--d:0.12s" class="group border-t-4 border-teal pt-5">
+          <div aria-hidden="true" class="mb-4 grid h-16 w-16 place-items-center rounded-2xl bg-teal transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110">
+            <svg viewBox="0 0 40 40" class="h-9 w-9" fill="none" stroke="#0A2B3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="14" r="5" fill="#27C2F8"/><circle cx="27" cy="14" r="5" fill="#fff"/><path d="M4 33c0-6 4-10 9-10s9 4 9 10M18 33c0-6 4-10 9-10s9 4 9 10"/></svg>
+          </div>
+          <h3 class="text-xl font-bold">Meet people who buy local</h3>
+          <p class="mt-2">Monthly mixers, ribbon cuttings, and a yearly gala put you in the room with other owners.</p>
+        </article>
+        <article data-reveal style="--d:0.24s" class="group border-t-4 border-mint pt-5">
+          <div aria-hidden="true" class="mb-4 grid h-16 w-16 place-items-center rounded-2xl bg-mint transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110">
+            <svg viewBox="0 0 40 40" class="h-9 w-9" fill="none" stroke="#0A2B3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 5l4.6 9.4 10.4 1.5-7.5 7.3 1.8 10.3L20 28.6 10.7 33.5l1.8-10.3L5 15.9l10.4-1.5z" fill="#27C2F8"/></svg>
+          </div>
+          <h3 class="text-xl font-bold">Get seen all year</h3>
+          <p class="mt-2">Sponsor placements rotate fairly across the site, so every tier gets real exposure.</p>
+        </article>
+      </div>
+
+      <h3 data-reveal class="mt-14 text-2xl font-extrabold">Seven reasons members stay</h3>
+      <ol class="mt-6 grid gap-x-10 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
+        <li data-reveal style="--d:0.0s" class="flex gap-4"><span aria-hidden="true" class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-deep font-display text-lg font-bold text-white">1</span><div><h4 class="font-bold">Connections</h4><p class="text-[15px]">The owners you meet here become customers, partners, and friends.</p></div></li>
+        <li data-reveal style="--d:0.1s" class="flex gap-4"><span aria-hidden="true" class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-deep font-display text-lg font-bold text-white">2</span><div><h4 class="font-bold">Credibility</h4><p class="text-[15px]">Our name on your door tells shoppers that you are invested here.</p></div></li>
+        <li data-reveal style="--d:0.2s" class="flex gap-4"><span aria-hidden="true" class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-deep font-display text-lg font-bold text-white">3</span><div><h4 class="font-bold">Resources</h4><p class="text-[15px]">Get answers from peers who have faced the same problems you have.</p></div></li>
+        <li data-reveal style="--d:0.0s" class="flex gap-4"><span aria-hidden="true" class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-deep font-display text-lg font-bold text-white">4</span><div><h4 class="font-bold">A voice</h4><p class="text-[15px]">We follow local and state issues and speak up for business at city hall.</p></div></li>
+        <li data-reveal style="--d:0.1s" class="flex gap-4"><span aria-hidden="true" class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-deep font-display text-lg font-bold text-white">5</span><div><h4 class="font-bold">Visibility</h4><p class="text-[15px]">Ribbon cuttings, sponsorships, and events put your name in front of the public.</p></div></li>
+        <li data-reveal style="--d:0.2s" class="flex gap-4"><span aria-hidden="true" class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-deep font-display text-lg font-bold text-white">6</span><div><h4 class="font-bold">Giving back</h4><p class="text-[15px]">Scholarships and service projects strengthen the town your business depends on.</p></div></li>
+        <li data-reveal style="--d:0.3s" class="flex gap-4"><span aria-hidden="true" class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-deep font-display text-lg font-bold text-white">7</span><div><h4 class="font-bold">Business intelligence</h4><p class="text-[15px]">Stay informed about local issues, regional opportunities, and changes that may affect your business.</p></div></li>
+      </ol>
+
+      <aside data-reveal class="mt-12 overflow-hidden rounded-2xl bg-lime sm:flex" aria-labelledby="new-title">
+        <div class="relative hidden w-48 shrink-0 sm:block lg:w-56">
+          <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Professionals smiling and networking at a business event" class="h-full w-full object-cover" loading="lazy" width="400" height="300">
+        </div>
+        <div class="p-6 sm:p-8">
+          <h3 id="new-title" class="scroll-mt-nav text-xl font-bold">New to the area?</h3>
+          <p class="mt-2 max-w-[70ch]">Join us at the next new member luncheon. Guests are welcome, and lunch is on us for first-time visitors.</p>
+          <a class="link mt-3 inline-block" href="#events">See the luncheon date</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Events -->
+  <section id="events" class="scroll-mt-nav bg-teal py-16 lg:py-20" aria-labelledby="events-title">
+    <div class="wrap grid gap-10 lg:grid-cols-[1fr_1.4fr]">
+      <div data-reveal>
+        <h2 id="events-title" class="text-3xl font-extrabold sm:text-4xl">Events all year long</h2>
+        <p class="mt-4 max-w-[48ch] text-lg">From morning mixers to the holiday parade, there is always a reason to get together. Register online in a few taps.</p>
+        <a class="btn btn-primary mt-6" href="#">View the full calendar</a>
+        <div class="mt-8 overflow-hidden rounded-2xl shadow-md ring-1 ring-ink/10">
+          <img src="https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Business professionals networking at a conference reception" class="aspect-[16/10] w-full object-cover" loading="lazy" width="800" height="500">
+        </div>
+      </div>
+      <div data-reveal style="--d:.12s" class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-ink/10">
+        <h3 class="text-xl font-extrabold text-deep">Looking ahead</h3>
+        <ul class="mt-4 divide-y divide-ink/10">
+          <li class="-mx-2 flex items-baseline justify-between gap-4 rounded-lg px-2 py-3 transition-colors duration-200 hover:bg-lime/70"><span><span class="font-semibold">Business after hours</span><br><span class="text-sm">Wednesday, December 10, 5:30 p.m.</span></span><a class="link text-sm" href="#">Details<span class="sr-only"> for business after hours</span></a></li>
+          <li class="-mx-2 flex items-baseline justify-between gap-4 rounded-lg px-2 py-3 transition-colors duration-200 hover:bg-lime/70"><span><span class="font-semibold">Ribbon cutting at Cedar and Sage Cafe</span><br><span class="text-sm">Friday, December 12, 10:00 a.m.</span></span><a class="link text-sm" href="#">Details<span class="sr-only"> for the ribbon cutting</span></a></li>
+          <li class="-mx-2 flex items-baseline justify-between gap-4 rounded-lg px-2 py-3 transition-colors duration-200 hover:bg-lime/70"><span><span class="font-semibold">State of the community breakfast</span><br><span class="text-sm">Thursday, January 8, 7:30 a.m.</span></span><a class="link text-sm" href="#">Register<span class="sr-only"> for the breakfast</span></a></li>
+          <li class="-mx-2 flex items-baseline justify-between gap-4 rounded-lg px-2 py-3 transition-colors duration-200 hover:bg-lime/70"><span><span class="font-semibold">Annual awards gala</span><br><span class="text-sm">Saturday, February 14, 6:30 p.m.</span></span><a class="link text-sm" href="#">Get tickets<span class="sr-only"> for the awards gala</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="bg-lime py-16 lg:py-20" aria-labelledby="quote-title">
+    <div class="wrap max-w-4xl">
+      <h2 id="quote-title" data-reveal class="text-3xl font-extrabold sm:text-4xl">What members say</h2>
+      <div id="quotes" role="group" aria-roledescription="carousel" aria-label="Member testimonials" aria-live="polite" class="mt-8 min-h-[13rem]">
+        <figure data-slide class="hero-in">
+          <blockquote class="font-display text-2xl font-bold leading-snug sm:text-3xl">“We found our first three wholesale customers at one morning mixer. The staff remembers your name and your business.”</blockquote>
+          <figcaption class="mt-5 text-lg"><strong>Maria Delgado</strong>, Delgado Family Bakery</figcaption>
+        </figure>
+        <figure data-slide class="hero-in">
+          <blockquote class="font-display text-2xl font-bold leading-snug sm:text-3xl">“The ribbon cutting brought in more people in one afternoon than a month of ads. I would join again tomorrow.”</blockquote>
+          <figcaption class="mt-5 text-lg"><strong>Daniel Ortiz</strong>, Prairie Savings Bank</figcaption>
+        </figure>
+        <figure data-slide class="hero-in">
+          <blockquote class="font-display text-2xl font-bold leading-snug sm:text-3xl">“Leadership Selph changed how I think about my town and my team. Every owner should take the class.”</blockquote>
+          <figcaption class="mt-5 text-lg"><strong>Priya Nair</strong>, Sunrise Medical Clinic</figcaption>
+        </figure>
+      </div>
+      <div class="mt-6 flex items-center gap-2">
+        <button id="q-prev" type="button" class="grid h-11 w-11 place-items-center rounded-full border-2 border-ink transition-colors hover:bg-ink hover:text-white" aria-label="Previous testimonial"><svg aria-hidden="true" viewBox="0 0 20 20" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l-6 6 6 6"/></svg></button>
+        <div class="flex">
+          <button type="button" data-dot class="group grid h-11 w-11 place-items-center" aria-label="Show testimonial 1"><span class="h-3.5 w-3.5 rounded-full border-2 border-ink transition-colors group-aria-[current=true]:bg-ink"></span></button>
+          <button type="button" data-dot class="group grid h-11 w-11 place-items-center" aria-label="Show testimonial 2"><span class="h-3.5 w-3.5 rounded-full border-2 border-ink transition-colors group-aria-[current=true]:bg-ink"></span></button>
+          <button type="button" data-dot class="group grid h-11 w-11 place-items-center" aria-label="Show testimonial 3"><span class="h-3.5 w-3.5 rounded-full border-2 border-ink transition-colors group-aria-[current=true]:bg-ink"></span></button>
+        </div>
+        <button id="q-next" type="button" class="grid h-11 w-11 place-items-center rounded-full border-2 border-ink transition-colors hover:bg-ink hover:text-white" aria-label="Next testimonial"><svg aria-hidden="true" viewBox="0 0 20 20" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Directory -->
+  <section id="directory" class="scroll-mt-nav py-16 lg:py-20" aria-labelledby="dir-title">
+    <div class="wrap">
+      <h2 data-reveal id="dir-title" class="text-3xl font-extrabold text-deep sm:text-4xl">Find a local member business</h2>
+      <form data-reveal style="--d:.08s" role="search" action="#" class="mt-6 flex max-w-2xl flex-col gap-3 sm:flex-row sm:items-end">
+        <div class="flex-1">
+          <label for="dir-q" class="block font-semibold">Business name or category</label>
+          <input id="dir-q" type="text" placeholder="For example, plumber or bakery"
+                 class="mt-1 min-h-[48px] w-full rounded-lg border-2 border-ink/60 bg-white px-4 text-base transition-colors placeholder:text-ink/60 focus:border-deep">
+        </div>
+        <button type="submit" class="btn btn-primary">Search the directory</button>
+      </form>
+      <ul data-reveal style="--d:.16s" id="categories" class="scroll-mt-nav mt-8 flex flex-wrap gap-3" aria-label="Popular categories">
+        <li><a class="inline-flex min-h-[44px] items-center rounded-full border-2 border-ink/30 px-4 font-semibold transition duration-200 hover:-translate-y-0.5 hover:border-ink hover:bg-mint" href="#">Restaurants</a></li>
+        <li><a class="inline-flex min-h-[44px] items-center rounded-full border-2 border-ink/30 px-4 font-semibold transition duration-200 hover:-translate-y-0.5 hover:border-ink hover:bg-mint" href="#">Home services</a></li>
+        <li><a class="inline-flex min-h-[44px] items-center rounded-full border-2 border-ink/30 px-4 font-semibold transition duration-200 hover:-translate-y-0.5 hover:border-ink hover:bg-mint" href="#">Health and wellness</a></li>
+        <li><a class="inline-flex min-h-[44px] items-center rounded-full border-2 border-ink/30 px-4 font-semibold transition duration-200 hover:-translate-y-0.5 hover:border-ink hover:bg-mint" href="#">Professional services</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- News -->
+  <section id="news" class="scroll-mt-nav bg-mint/50 py-16 lg:py-20" aria-labelledby="news-title">
+    <div class="wrap">
+      <h2 id="news-title" data-reveal class="text-3xl font-extrabold sm:text-4xl">News and spotlights</h2>
+      <ul data-reveal style="--d:.1s" class="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <li class="rounded-2xl bg-white p-6 ring-1 ring-ink/10 transition duration-200 hover:-translate-y-1 hover:shadow-md">
+          <p class="inline-block rounded-full bg-lime px-3 py-1 text-sm font-semibold">Member of the month</p>
+          <div class="mt-4 flex items-center gap-4">
+            <span aria-hidden="true" class="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-deep font-display text-xl font-bold text-white">HH</span>
+            <h3 class="font-display text-xl font-bold leading-tight">Harper Hardware</h3>
+          </div>
+          <p class="mt-3 text-[15px]">Four generations of neighbors have bought their first hammer here.</p>
+          <a class="link mt-3 inline-block" href="#">Read the story</a>
+        </li>
+        <li class="rounded-2xl bg-white p-6 ring-1 ring-ink/10 transition duration-200 hover:-translate-y-1 hover:shadow-md">
+          <p class="inline-block rounded-full bg-lime px-3 py-1 text-sm font-semibold">Ambassador of the month</p>
+          <div class="mt-4 flex items-center gap-4">
+            <span aria-hidden="true" class="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-deep font-display text-xl font-bold text-white">DO</span>
+            <h3 class="font-display text-xl font-bold leading-tight">Daniel Ortiz</h3>
+          </div>
+          <p class="mt-3 text-[15px]">Prairie Savings Bank. He has welcomed more than 20 new members this year.</p>
+          <a class="link mt-3 inline-block" href="#">Meet our ambassadors</a>
+        </li>
+        <li class="rounded-2xl bg-white p-6 ring-1 ring-ink/10 transition duration-200 hover:-translate-y-1 hover:shadow-md">
+          <h3 class="font-display text-xl font-bold">Latest news</h3>
+          <ul class="mt-2 divide-y divide-ink/10">
+            <li class="py-2"><span class="block text-sm">Nov 10</span><a class="link" href="#">Ribbon cutting at Cedar and Sage Cafe</a></li>
+            <li class="py-2"><span class="block text-sm">Nov 4</span><a class="link" href="#">Holiday parade entries are now open</a></li>
+            <li class="py-2"><span class="block text-sm">Oct 29</span><a class="link" href="#">Chamber welcomes five new members</a></li>
+          </ul>
+        </li>
+        <li class="rounded-2xl bg-white p-6 ring-1 ring-ink/10 transition duration-200 hover:-translate-y-1 hover:shadow-md">
+          <h3 class="font-display text-xl font-bold">Welcome new members</h3>
+          <ul class="mt-2 divide-y divide-ink/10 text-[15px]">
+            <li class="py-2">Redbud Insurance Group</li>
+            <li class="py-2">Larkspur Fine Jewelry</li>
+            <li class="py-2">Hill Country Electric</li>
+            <li class="py-2">Kids First Tutoring</li>
+            <li class="py-2">Sunrise Medical Clinic</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Community guide -->
+  <section id="guide" class="scroll-mt-nav py-16 lg:py-20" aria-labelledby="guide-title">
+    <div class="wrap">
+      <div class="grid items-center gap-10 lg:grid-cols-[auto_1fr]">
+        <div data-reveal class="mx-auto">
+          <div aria-hidden="true" class="flex h-72 w-52 flex-col justify-between rounded-l-md rounded-r-2xl bg-deep p-5 text-white shadow-xl ring-1 ring-ink/20 transition-transform duration-300 hover:-rotate-2 hover:scale-105">
+            <span class="font-display text-sm font-semibold">Selph Chamber</span>
+            <span class="font-display text-3xl font-extrabold leading-tight">2027 Community Guide</span>
+            <span class="h-2 w-16 rounded bg-sky"></span>
+          </div>
+        </div>
+        <div data-reveal style="--d:.1s">
+          <h2 id="guide-title" class="text-3xl font-extrabold text-deep sm:text-4xl">The 2027 business and community guide</h2>
+          <p class="mt-4 max-w-[58ch] text-lg">Thinking about opening or moving a business here? The guide covers our local economy, member resources, and a profile of every town we serve.</p>
+          <a class="btn btn-primary mt-6" href="#">Download the guide</a>
+        </div>
+      </div>
+
+      <h2 id="communities" data-reveal class="scroll-mt-nav mt-16 text-3xl font-extrabold text-deep sm:text-4xl">Communities we serve</h2>
+      <ul data-reveal style="--d:.1s" class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+        <li><a href="#" class="group flex h-full flex-col items-center gap-3 rounded-2xl border-2 border-ink/15 p-5 text-center font-semibold transition duration-200 hover:-translate-y-1 hover:border-deep hover:bg-mint/40"><span aria-hidden="true" class="grid h-14 w-14 place-items-center rounded-full bg-teal font-display text-xl font-bold transition-transform duration-300 group-hover:scale-110">S</span>Selph Springs</a></li>
+        <li><a href="#" class="group flex h-full flex-col items-center gap-3 rounded-2xl border-2 border-ink/15 p-5 text-center font-semibold transition duration-200 hover:-translate-y-1 hover:border-deep hover:bg-mint/40"><span aria-hidden="true" class="grid h-14 w-14 place-items-center rounded-full bg-teal font-display text-xl font-bold transition-transform duration-300 group-hover:scale-110">C</span>Cedar Hollow</a></li>
+        <li><a href="#" class="group flex h-full flex-col items-center gap-3 rounded-2xl border-2 border-ink/15 p-5 text-center font-semibold transition duration-200 hover:-translate-y-1 hover:border-deep hover:bg-mint/40"><span aria-hidden="true" class="grid h-14 w-14 place-items-center rounded-full bg-teal font-display text-xl font-bold transition-transform duration-300 group-hover:scale-110">L</span>Larkspur</a></li>
+        <li><a href="#" class="group flex h-full flex-col items-center gap-3 rounded-2xl border-2 border-ink/15 p-5 text-center font-semibold transition duration-200 hover:-translate-y-1 hover:border-deep hover:bg-mint/40"><span aria-hidden="true" class="grid h-14 w-14 place-items-center rounded-full bg-teal font-display text-xl font-bold transition-transform duration-300 group-hover:scale-110">O</span>Oak Ridge</a></li>
+        <li><a href="#" class="group flex h-full flex-col items-center gap-3 rounded-2xl border-2 border-ink/15 p-5 text-center font-semibold transition duration-200 hover:-translate-y-1 hover:border-deep hover:bg-mint/40"><span aria-hidden="true" class="grid h-14 w-14 place-items-center rounded-full bg-teal font-display text-xl font-bold transition-transform duration-300 group-hover:scale-110">P</span>Prairie Creek</a></li>
+        <li><a href="#" class="group flex h-full flex-col items-center gap-3 rounded-2xl border-2 border-ink/15 p-5 text-center font-semibold transition duration-200 hover:-translate-y-1 hover:border-deep hover:bg-mint/40"><span aria-hidden="true" class="grid h-14 w-14 place-items-center rounded-full bg-teal font-display text-xl font-bold transition-transform duration-300 group-hover:scale-110">S</span>Sage Meadow</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Economic development -->
+  <section id="economic-development" class="scroll-mt-nav overflow-hidden bg-ink py-16 text-white lg:py-20" aria-labelledby="econ-title">
+    <div class="wrap grid items-center gap-10 lg:grid-cols-[1.05fr_.95fr]">
+      <div data-reveal>
+        <p class="text-sm font-bold uppercase tracking-[.18em] text-teal">Business & community growth</p>
+        <h2 id="econ-title" class="mt-3 max-w-[18ch] text-3xl font-extrabold sm:text-4xl">A stronger region starts with informed decisions.</h2>
+        <p class="mt-5 max-w-[58ch] text-lg text-white/85">Explore local business resources, community profiles, workforce connections, and regional information for businesses considering a move or expansion.</p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a class="btn bg-sky text-ink hover:bg-white" href="#guide">Explore the community guide</a>
+          <a class="btn border-2 border-white/70 text-white hover:bg-white hover:text-ink" href="#contact">Talk with the chamber</a>
+        </div>
+      </div>
+      <div data-reveal style="--d:.12s" class="relative rounded-3xl bg-white/10 p-6 ring-1 ring-white/20 sm:p-8">
+        <div class="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-sky/20 blur-2xl" aria-hidden="true"></div>
+        <h3 class="relative font-display text-2xl font-bold">Considering Selph?</h3>
+        <p class="relative mt-2 max-w-[44ch] text-white/80">A starting point for site selectors, employers, entrepreneurs, and families exploring the area.</p>
+        <ul class="relative mt-6 grid gap-3 sm:grid-cols-2">
+          <li class="rounded-xl bg-white p-4 text-ink"><span class="block text-sm font-semibold text-deep">01</span><strong>Community profiles</strong><span class="mt-1 block text-sm">Get to know the towns we serve.</span></li>
+          <li class="rounded-xl bg-white p-4 text-ink"><span class="block text-sm font-semibold text-deep">02</span><strong>Business connections</strong><span class="mt-1 block text-sm">Meet local owners and service providers.</span></li>
+          <li class="rounded-xl bg-white p-4 text-ink"><span class="block text-sm font-semibold text-deep">03</span><strong>Regional resources</strong><span class="mt-1 block text-sm">Find useful local and economic information.</span></li>
+          <li class="rounded-xl bg-white p-4 text-ink"><span class="block text-sm font-semibold text-deep">04</span><strong>Chamber support</strong><span class="mt-1 block text-sm">Connect with a team member for next steps.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership -->
+  <section id="leadership" class="scroll-mt-nav bg-teal py-16 lg:py-20" aria-labelledby="lead-title">
+    <div class="wrap grid items-center gap-8 lg:grid-cols-[1.4fr_1fr]">
+      <div data-reveal>
+        <h2 id="lead-title" class="text-3xl font-extrabold sm:text-4xl">Leadership Selph</h2>
+        <p class="mt-4 max-w-[56ch] text-lg">A nine-month program that prepares established leaders for their next step in serving the community. Classes meet one morning a month.</p>
+        <a class="btn btn-primary mt-6" href="#">Apply now</a>
+      </div>
+      <div id="president" data-reveal style="--d:.12s" class="scroll-mt-nav rounded-2xl bg-white p-6 ring-1 ring-ink/10">
+        <div class="flex items-center gap-4">
+          <img src="https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Portrait of Rosa Martinez, President and CEO" class="h-14 w-14 shrink-0 rounded-full object-cover" loading="lazy" width="56" height="56">
+          <div>
+            <h3 class="font-display text-xl font-bold">Rosa Martinez</h3>
+            <p class="text-sm">President and CEO</p>
+          </div>
+        </div>
+        <p class="mt-4 text-[15px]">Rosa has led the chamber for 20 years. Stop by, call, or set up a visit to talk about your business.</p>
+        <a class="btn btn-quiet mt-4" href="mailto:rosa@selphchamber.org?subject=Schedule%20a%20visit">Schedule a visit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sponsors -->
+  <section id="sponsors" class="scroll-mt-nav border-y border-ink/10 py-16 lg:py-20" aria-labelledby="sp-title">
+    <div class="wrap">
+      <h2 id="sp-title" data-reveal class="text-3xl font-extrabold text-deep sm:text-4xl">Our partners</h2>
+      <p data-reveal style="--d:.08s" class="mt-3 max-w-[60ch] text-lg">Thank you to the businesses that make our events and programs possible.</p>
+      <h3 class="mt-10 font-display text-xl font-bold">Chairman’s Circle</h3>
+      <ul data-reveal class="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <li><a href="#" class="grid h-24 place-items-center rounded-xl bg-mint/60 px-3 text-center transition duration-200 hover:-translate-y-1 hover:bg-mint hover:shadow-md"><span><span class="block font-display text-lg font-bold">Harper Hardware</span><span class="block text-sm">Presenting partner</span></span></a></li>
+        <li><a href="#" class="grid h-24 place-items-center rounded-xl bg-mint/60 px-3 text-center transition duration-200 hover:-translate-y-1 hover:bg-mint hover:shadow-md"><span><span class="block font-display text-lg font-bold">Prairie Savings Bank</span><span class="block text-sm">Chairman’s Circle</span></span></a></li>
+        <li><a href="#" class="grid h-24 place-items-center rounded-xl bg-mint/60 px-3 text-center transition duration-200 hover:-translate-y-1 hover:bg-mint hover:shadow-md"><span><span class="block font-display text-lg font-bold">Lone Oak Dental</span><span class="block text-sm">Chairman’s Circle</span></span></a></li>
+        <li><a href="#" class="grid h-24 place-items-center rounded-xl bg-mint/60 px-3 text-center transition duration-200 hover:-translate-y-1 hover:bg-mint hover:shadow-md"><span><span class="block font-display text-lg font-bold">Cedar and Sage Cafe</span><span class="block text-sm">Chairman’s Circle</span></span></a></li>
+      </ul>
+      <h3 class="mt-10 font-display text-xl font-bold">Event partners: Gold</h3>
+      <ul data-reveal class="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <li><a href="#" class="grid h-16 place-items-center rounded-xl border-2 border-ink/15 px-3 text-center font-semibold transition duration-200 hover:-translate-y-1 hover:border-deep hover:shadow-md">Redbud Insurance Group</a></li>
+        <li><a href="#" class="grid h-16 place-items-center rounded-xl border-2 border-ink/15 px-3 text-center font-semibold transition duration-200 hover:-translate-y-1 hover:border-deep hover:shadow-md">Hill Country Electric</a></li>
+        <li><a href="#" class="grid h-16 place-items-center rounded-xl border-2 border-ink/15 px-3 text-center font-semibold transition duration-200 hover:-translate-y-1 hover:border-deep hover:shadow-md">First Prairie Credit Union</a></li>
+        <li><a href="#" class="grid h-16 place-items-center rounded-xl border-2 border-ink/15 px-3 text-center font-semibold transition duration-200 hover:-translate-y-1 hover:border-deep hover:shadow-md">Sunrise Medical Clinic</a></li>
+      </ul>
+      <h3 class="mt-10 font-display text-xl font-bold">Silver</h3>
+      <ul data-reveal class="mt-4 flex flex-wrap gap-x-8 gap-y-2">
+        <li><a class="link" href="#">Larkspur Fine Jewelry</a></li>
+        <li><a class="link" href="#">Kids First Tutoring</a></li>
+        <li><a class="link" href="#">Oak Ridge Realty</a></li>
+        <li><a class="link" href="#">Stillwater Print Shop</a></li>
+      </ul>
+      <h3 class="mt-10 font-display text-xl font-bold">Bronze</h3>
+      <ul data-reveal class="mt-4 flex flex-wrap gap-x-8 gap-y-2 text-[15px]">
+        <li><a class="link" href="#">Sage Meadow Landscaping</a></li>
+        <li><a class="link" href="#">Cedar Hollow Auto</a></li>
+        <li><a class="link" href="#">Selph Springs Pharmacy</a></li>
+        <li><a class="link" href="#">Prairie Creek Title</a></li>
+        <li><a class="link" href="#">Willow Lane Florist</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Join CTA -->
+  <section id="join" class="scroll-mt-nav relative overflow-hidden bg-deep pb-20 pt-16 text-white lg:pt-20" aria-labelledby="join-title">
+    <div class="absolute inset-0 opacity-20">
+      <img src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" class="h-full w-full object-cover" loading="lazy" aria-hidden="true">
+    </div>
+    <div class="relative wrap grid items-center gap-8 lg:grid-cols-[1.3fr_1fr]">
+      <div data-reveal>
+        <h2 id="join-title" class="text-3xl font-extrabold sm:text-4xl">Ready to join your neighbors?</h2>
+        <p class="mt-4 max-w-[52ch] text-lg text-white/90">Applying takes about a minute. A member of our team will call you within two business days to welcome you.</p>
+      </div>
+      <div data-reveal style="--d:.14s" class="flex flex-wrap gap-4 lg:justify-end">
+        <a class="btn bg-white text-ink hover:bg-lime" href="#">Start your membership application</a>
+        <a class="btn border-2 border-white text-white hover:bg-white hover:text-ink" href="#contact">Talk with our team</a>
+      </div>
+      <div class="lg:col-span-2" data-reveal style="--d:.22s">
+        <div class="grid gap-3 rounded-2xl bg-white/10 p-5 ring-1 ring-white/20 sm:grid-cols-2 lg:grid-cols-4">
+          <div><p class="text-sm font-bold uppercase tracking-wide text-teal">Connect</p><p class="mt-1 font-semibold">Build your network</p><p class="mt-1 text-sm text-white/75">Member directory, introductions, and networking opportunities.</p></div>
+          <div><p class="text-sm font-bold uppercase tracking-wide text-teal">Promote</p><p class="mt-1 font-semibold">Increase visibility</p><p class="mt-1 text-sm text-white/75">Member spotlights, business listings, and event exposure.</p></div>
+          <div><p class="text-sm font-bold uppercase tracking-wide text-teal">Lead</p><p class="mt-1 font-semibold">Develop your skills</p><p class="mt-1 text-sm text-white/75">Leadership programs, training, and peer learning.</p></div>
+          <div><p class="text-sm font-bold uppercase tracking-wide text-teal">Advocate</p><p class="mt-1 font-semibold">Have a stronger voice</p><p class="mt-1 text-sm text-white/75">Connect with community leaders and local business initiatives.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact" class="scroll-mt-nav bg-ink text-white">
+  <div class="wrap grid gap-10 py-12 md:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <h2 class="font-display text-xl font-extrabold">Selph Chamber of Commerce</h2>
+      <address class="mt-3 not-italic">
+        100 Main Street<br>
+        Anytown, Texas 75000<br>
+        <a class="inline-block py-1 underline underline-offset-4" href="tel:+15555550100">(555) 555-0100</a><br>
+        <a class="inline-block py-1 underline underline-offset-4" href="mailto:info@selphchamber.org">info@selphchamber.org</a>
+      </address>
+      <p class="mt-3 text-sm">Monday to Friday<br>8:30 a.m. to 5:00 p.m.</p>
+    </div>
+    <nav aria-label="Get involved">
+      <h2 class="font-display text-lg font-bold">Get involved</h2>
+      <ul class="mt-3">
+        <li><a class="inline-block py-1 underline underline-offset-4 transition-colors hover:text-lime" href="#">Become an ambassador</a></li>
+        <li><a class="inline-block py-1 underline underline-offset-4 transition-colors hover:text-lime" href="#">Program guidelines</a></li>
+        <li><a class="inline-block py-1 underline underline-offset-4 transition-colors hover:text-lime" href="#">Festival volunteer sign up</a></li>
+        <li><a class="inline-block py-1 underline underline-offset-4 transition-colors hover:text-lime" href="#leadership">Leadership Selph</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Quick links">
+      <h2 class="font-display text-lg font-bold">Quick links</h2>
+      <ul class="mt-3">
+        <li><a class="inline-block py-1 underline underline-offset-4 transition-colors hover:text-lime" href="#">Member login</a></li>
+        <li><a class="inline-block py-1 underline underline-offset-4 transition-colors hover:text-lime" href="#events">Event calendar</a></li>
+        <li><a class="inline-block py-1 underline underline-offset-4 transition-colors hover:text-lime" href="#directory">Member directory</a></li>
+        <li><a class="inline-block py-1 underline underline-offset-4 transition-colors hover:text-lime" href="#">Hot deals</a></li>
+        <li><a class="inline-block py-1 underline underline-offset-4 transition-colors hover:text-lime" href="#">Job board</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h2 class="font-display text-lg font-bold">Stay connected</h2>
+      <ul class="mt-3 flex gap-3">
+        <li><a aria-label="Facebook" href="#" class="grid h-11 w-11 place-items-center rounded-full border-2 border-white/60 transition-colors hover:bg-white hover:text-ink"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor"><path d="M14 8h2V5h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2l1-3h-3V8z"/></svg></a></li>
+        <li><a aria-label="LinkedIn" href="#" class="grid h-11 w-11 place-items-center rounded-full border-2 border-white/60 transition-colors hover:bg-white hover:text-ink"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10v8M6 6.5v.01M10 18v-5a3 3 0 0 1 6 0v5M10 10v8"/></svg></a></li>
+        <li><a aria-label="Instagram" href="#" class="grid h-11 w-11 place-items-center rounded-full border-2 border-white/60 transition-colors hover:bg-white hover:text-ink"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17" cy="7" r=".6"/></svg></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/20">
+    <div class="wrap flex flex-wrap items-center justify-between gap-x-6 gap-y-1 py-4 text-sm">
+      <p>Copyright 2026 Selph Chamber of Commerce. All rights reserved.</p>
+      <ul class="flex flex-wrap gap-x-5">
+        <li><a class="inline-block py-1 underline underline-offset-4 transition-colors hover:text-lime" href="#">Accessibility statement</a></li>
+        <li><a class="inline-block py-1 underline underline-offset-4 transition-colors hover:text-lime" href="#">Report a website problem</a></li>
+        <li><a class="inline-block py-1 underline underline-offset-4 transition-colors hover:text-lime" href="#">Privacy policy</a></li>
+        <li><a class="inline-block py-1 underline underline-offset-4 transition-colors hover:text-lime" href="#">Terms and conditions</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  /* Sticky header: transparent → solid white on scroll */
+  var header = document.getElementById('site-header');
+  var threshold = 24;
+  function updateHeader() {
+    if (!header) return;
+    if (window.scrollY > threshold) header.classList.add('is-scrolled');
+    else header.classList.remove('is-scrolled');
+  }
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
+})();
+
+(function () {
+  var btn = document.getElementById('menu-btn');
+  var nav = document.getElementById('site-nav');
+  var desktop = window.matchMedia('(min-width: 1024px)');
+  var items = Array.prototype.slice.call(document.querySelectorAll('[data-sub]'));
+  var timers = new WeakMap();
+
+  function setSub(li, open) {
+    li.setAttribute('data-open', String(open));
+    var b = li.querySelector('button');
+    if (b) b.setAttribute('aria-expanded', String(open));
+    if (!open) delete li.dataset.kb;
+  }
+  function closeAll(except) {
+    items.forEach(function (li) { if (li !== except) setSub(li, false); });
+  }
+  function setMenu(open) {
+    nav.setAttribute('data-open', String(open));
+    btn.setAttribute('aria-expanded', String(open));
+    if (!open) closeAll();
+  }
+
+  btn.addEventListener('click', function () {
+    setMenu(nav.getAttribute('data-open') !== 'true');
+  });
+
+  items.forEach(function (li) {
+    var b = li.querySelector('button');
+    b.addEventListener('click', function (e) {
+      var open = b.getAttribute('aria-expanded') !== 'true';
+      if (desktop.matches && e.detail > 0) open = true;
+      closeAll(li);
+      setSub(li, open);
+      if (open && e.detail === 0) li.dataset.kb = '1';
     });
+    li.addEventListener('mouseenter', function () {
+      if (!desktop.matches) return;
+      clearTimeout(timers.get(li));
+      closeAll(li);
+      setSub(li, true);
+    });
+    li.addEventListener('mouseleave', function () {
+      if (!desktop.matches) return;
+      timers.set(li, setTimeout(function () {
+        if (li.dataset.kb !== '1') setSub(li, false);
+      }, 160));
+    });
+    li.addEventListener('focusout', function (e) {
+      if (desktop.matches && !li.contains(e.relatedTarget)) setSub(li, false);
+    });
+  });
 
-    nav.addEventListener('click', function (e) {
-        if (e.target.closest('a')) { closeAll(); if (!desktop.matches) setMenu(false); }
-    });
-    document.addEventListener('click', function (e) {
-        if (!nav.contains(e.target) && !btn.contains(e.target)) closeAll();
-    });
-    document.addEventListener('keydown', function (e) {
-        if (e.key !== 'Escape') return;
-        var open = items.filter(function (li) { return li.getAttribute('data-open') === 'true'; })[0];
-        if (open) { setSub(open, false); open.querySelector('button').focus(); }
-        else if (!desktop.matches && nav.getAttribute('data-open') === 'true') { setMenu(false); btn.focus(); }
-    });
-    desktop.addEventListener('change', function () { setMenu(false); });
-    })();
-
-    (function () {
-    var els = document.querySelectorAll('[data-reveal]');
-    if (!('IntersectionObserver' in window)) {
-        Array.prototype.forEach.call(els, function (el) { el.classList.add('is-in'); });
-        return;
+  nav.addEventListener('click', function (e) {
+    if (e.target.closest('a')) {
+      closeAll();
+      if (!desktop.matches) setMenu(false);
     }
-    var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (x) {
-        if (x.isIntersecting) { x.target.classList.add('is-in'); io.unobserve(x.target); }
-        });
-    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
-    Array.prototype.forEach.call(els, function (el) { io.observe(el); });
-    })();
-    </script>
-    </body>
+  });
+  document.addEventListener('click', function (e) {
+    if (!nav.contains(e.target) && !btn.contains(e.target)) closeAll();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    var open = items.filter(function (li) { return li.getAttribute('data-open') === 'true'; })[0];
+    if (open) {
+      setSub(open, false);
+      open.querySelector('button').focus();
+    } else if (!desktop.matches && nav.getAttribute('data-open') === 'true') {
+      setMenu(false);
+      btn.focus();
+    }
+  });
+  desktop.addEventListener('change', function () { setMenu(false); });
+})();
+
+(function () {
+  var els = document.querySelectorAll('[data-reveal]');
+  if (!('IntersectionObserver' in window)) {
+    Array.prototype.forEach.call(els, function (el) { el.classList.add('is-in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (x) {
+      if (x.isIntersecting) {
+        x.target.classList.add('is-in');
+        io.unobserve(x.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+  Array.prototype.forEach.call(els, function (el) { io.observe(el); });
+})();
+
+(function () {
+  var alertBox = document.getElementById('alert');
+  var close = document.getElementById('alert-close');
+  if (alertBox && close) close.addEventListener('click', function () { alertBox.remove(); });
+
+  var box = document.getElementById('quotes');
+  if (!box) return;
+  var slides = Array.prototype.slice.call(box.querySelectorAll('[data-slide]'));
+  var dots = Array.prototype.slice.call(document.querySelectorAll('[data-dot]'));
+  var i = 0;
+  function show(n) {
+    i = (n + slides.length) % slides.length;
+    slides.forEach(function (el, k) { el.hidden = k !== i; });
+    dots.forEach(function (d, k) { d.setAttribute('aria-current', k === i ? 'true' : 'false'); });
+  }
+  document.getElementById('q-prev').addEventListener('click', function () { show(i - 1); });
+  document.getElementById('q-next').addEventListener('click', function () { show(i + 1); });
+  dots.forEach(function (d, k) { d.addEventListener('click', function () { show(k); }); });
+  show(0);
+})();
+</script>
+</body>
 </html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Us | Selph Chamber of Commerce</title>
+<meta name="description" content="Contact the Selph Chamber of Commerce. Reach our team by phone, email, or visit us at 100 Main Street.">
+<meta name="theme-color" content="#0A2B3A">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          deep: '#0E7EA6',
+          sky:  '#27C2F8',
+          teal: '#8BDCE0',
+          mint: '#A1E4DB',
+          lime: '#E9F8CD',
+          ink:  '#0A2B3A'
+        },
+        fontFamily: {
+          display: ['"Bricolage Grotesque"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          body: ['"Public Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+
+<style type="text/tailwindcss">
+  @layer base {
+    html { font-family: 'Public Sans', ui-sans-serif, system-ui, sans-serif; color: #0A2B3A; }
+    h1, h2, h3 { font-family: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif; letter-spacing: -0.01em; }
+    :focus-visible { outline: 3px solid #0A2B3A; outline-offset: 3px; border-radius: 4px; }
+  }
+  @layer components {
+    .btn { @apply inline-flex min-h-[48px] items-center justify-center rounded-lg px-6 py-3 font-semibold transition duration-200 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:shadow-none; }
+    .btn-primary { @apply bg-sky text-ink hover:bg-ink hover:text-white; }
+    .btn-quiet { @apply border-2 border-ink text-ink hover:bg-ink hover:text-white; }
+    .link { @apply font-semibold transition-colors text-deep underline decoration-sky decoration-2 underline-offset-4 hover:text-ink; }
+    .wrap { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
+    .field { @apply mt-1 min-h-[48px] w-full rounded-lg border-2 border-ink/40 bg-white px-4 text-base transition-colors placeholder:text-ink/50 focus:border-deep; }
+    .label { @apply block text-sm font-semibold; }
+  }
+</style>
+<script>document.documentElement.classList.add('js')</script>
+<style>
+  @keyframes menuIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+  .js [data-reveal] { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0s); }
+  .js [data-reveal].is-in { opacity: 1; transform: none; }
+
+  /* Interior pages: solid white sticky header */
+  #site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    transition: background-color .3s ease, box-shadow .3s ease, backdrop-filter .3s ease, border-color .3s ease;
+    background-color: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(10, 43, 58, 0.08);
+    border-bottom: 1px solid rgba(10, 43, 58, 0.08);
+  }
+  #site-header .nav-link { color: #0A2B3A; transition: color .25s ease; }
+  #site-header .nav-link:hover { color: #0E7EA6; }
+  #site-header .logo-text { color: #0E7EA6; }
+  #site-header .menu-btn-border { border-color: #0A2B3A; color: #0A2B3A; }
+
+  .hamburger-icon span {
+    display: block;
+    width: 20px;
+    height: 2.4px;
+    background: currentColor;
+    border-radius: 2px;
+    transition: transform .25s ease, opacity .2s ease;
+  }
+  .hamburger-icon span + span { margin-top: 5px; }
+  #menu-btn[aria-expanded="true"] .hamburger-icon span:nth-child(1) { transform: translateY(7.4px) rotate(45deg); }
+  #menu-btn[aria-expanded="true"] .hamburger-icon span:nth-child(2) { opacity: 0; }
+  #menu-btn[aria-expanded="true"] .hamburger-icon span:nth-child(3) { transform: translateY(-7.4px) rotate(-45deg); }
+
+  #site-nav[data-open="true"] { animation: menuIn .22s ease-out; }
+
+  @media (max-width: 1023px) {
+    #site-header #site-nav[data-open="true"] {
+      background: #fff;
+      border-radius: 0 0 1rem 1rem;
+      box-shadow: 0 12px 24px rgba(10, 43, 58, 0.12);
+      margin-top: 0.25rem;
+      padding: 0.5rem 0 1rem;
+    }
+  }
+
+  .scroll-mt-nav { scroll-margin-top: 5.5rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto !important; }
+    *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
+    .js [data-reveal] { opacity: 1 !important; transform: none !important; }
+  }
+</style>
+</head>
+
+<body class="overflow-x-hidden bg-white font-body text-base leading-relaxed text-ink antialiased">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-ink focus:px-4 focus:py-3 focus:text-white">Skip to main content</a>
+
+<!-- Utility bar -->
+<div class="bg-ink text-sm text-white">
+  <div class="wrap flex flex-wrap items-center justify-between gap-x-6 gap-y-1 py-1">
+    <a class="inline-block py-2 font-semibold underline-offset-4 hover:underline" href="tel:+15555550100">(555) 555-0100</a>
+    <ul class="flex flex-wrap items-center gap-x-5">
+      <li><a class="inline-block py-2 underline-offset-4 hover:underline" href="#">Member login</a></li>
+      <li class="hidden sm:block"><a class="inline-block py-2 underline-offset-4 hover:underline" href="index.html#events">Event calendar</a></li>
+      <li class="hidden sm:block"><a class="inline-block py-2 underline-offset-4 hover:underline" href="#">Hot deals</a></li>
+      <li class="hidden md:block"><a class="inline-block py-2 underline-offset-4 hover:underline" href="#">Job board</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Sticky header (solid on interior pages) -->
+<header id="site-header">
+  <div class="wrap flex flex-wrap items-center justify-between gap-x-4 gap-y-2 py-3 lg:py-4">
+    <a href="index.html" class="flex items-center gap-3 font-display text-lg font-extrabold leading-tight sm:text-xl">
+      <span aria-hidden="true" class="grid h-10 w-10 place-items-center rounded-full bg-sky text-ink shadow-sm ring-2 ring-ink/10">
+        <svg viewBox="0 0 32 32" class="h-6 w-6" fill="none" aria-hidden="true">
+          <path d="M16 4c-4.4 0-8 3.2-8 7.2 0 5.6 8 12.8 8 12.8s8-7.2 8-12.8C24 7.2 20.4 4 16 4z" fill="#0A2B3A"/>
+          <circle cx="16" cy="11.2" r="2.8" fill="#27C2F8"/>
+        </svg>
+      </span>
+      <span class="logo-text">Selph Chamber</span>
+    </a>
+
+    <button id="menu-btn" type="button" class="menu-btn-border inline-flex min-h-[48px] min-w-[48px] items-center justify-center rounded-lg border-2 px-3 font-semibold transition-colors hover:bg-ink/5 lg:hidden" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle menu">
+      <span class="hamburger-icon" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+
+    <nav id="site-nav" aria-label="Main" class="hidden w-full data-[open=true]:block lg:block lg:w-auto">
+      <ul class="flex flex-col text-base font-semibold lg:flex-row lg:items-center lg:gap-x-3 xl:gap-x-5 lg:text-[15px]">
+        <li class="group relative border-b border-ink/10 lg:border-0" data-sub>
+          <button type="button" class="nav-link flex min-h-[48px] w-full items-center justify-between gap-2 rounded-lg px-1 py-3 transition-colors lg:min-h-[44px] lg:w-auto lg:py-2" aria-expanded="false" aria-controls="sub-membership">
+            Membership
+            <svg aria-hidden="true" viewBox="0 0 20 20" class="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[open=true]:rotate-180" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l5 5 5-5"/></svg>
+          </button>
+          <ul id="sub-membership" class="mb-3 ml-1 hidden border-l-4 border-mint pl-2 font-medium text-ink group-data-[open=true]:block lg:absolute lg:left-0 lg:top-full lg:z-30 lg:mb-0 lg:ml-0 lg:mt-0 lg:block lg:min-w-[250px] lg:translate-y-2 lg:rounded-xl lg:border-0 lg:bg-white lg:p-2 lg:opacity-0 lg:shadow-lg lg:ring-1 lg:ring-ink/15 lg:invisible lg:transition lg:duration-200 lg:ease-out lg:group-data-[open=true]:visible lg:group-data-[open=true]:translate-y-0 lg:group-data-[open=true]:opacity-100">
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="index.html#why-join">Why join</a></li>
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="index.html#leadership">Leadership program</a></li>
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="index.html#new-title">New member luncheon</a></li>
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="index.html#join">Apply to join</a></li>
+          </ul>
+        </li>
+        <li class="group relative border-b border-ink/10 lg:border-0" data-sub>
+          <button type="button" class="nav-link flex min-h-[48px] w-full items-center justify-between gap-2 rounded-lg px-1 py-3 transition-colors lg:min-h-[44px] lg:w-auto lg:py-2" aria-expanded="false" aria-controls="sub-events">
+            Events
+            <svg aria-hidden="true" viewBox="0 0 20 20" class="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[open=true]:rotate-180" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l5 5 5-5"/></svg>
+          </button>
+          <ul id="sub-events" class="mb-3 ml-1 hidden border-l-4 border-mint pl-2 font-medium text-ink group-data-[open=true]:block lg:absolute lg:left-0 lg:top-full lg:z-30 lg:mb-0 lg:ml-0 lg:mt-0 lg:block lg:min-w-[250px] lg:translate-y-2 lg:rounded-xl lg:border-0 lg:bg-white lg:p-2 lg:opacity-0 lg:shadow-lg lg:ring-1 lg:ring-ink/15 lg:invisible lg:transition lg:duration-200 lg:ease-out lg:group-data-[open=true]:visible lg:group-data-[open=true]:translate-y-0 lg:group-data-[open=true]:opacity-100">
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="index.html#this-month">This month</a></li>
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="index.html#events">Looking ahead</a></li>
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="index.html#festival">Community Festival</a></li>
+          </ul>
+        </li>
+        <li class="group relative border-b border-ink/10 lg:border-0" data-sub>
+          <button type="button" class="nav-link flex min-h-[48px] w-full items-center justify-between gap-2 rounded-lg px-1 py-3 transition-colors lg:min-h-[44px] lg:w-auto lg:py-2" aria-expanded="false" aria-controls="sub-directory">
+            Directory
+            <svg aria-hidden="true" viewBox="0 0 20 20" class="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[open=true]:rotate-180" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l5 5 5-5"/></svg>
+          </button>
+          <ul id="sub-directory" class="mb-3 ml-1 hidden border-l-4 border-mint pl-2 font-medium text-ink group-data-[open=true]:block lg:absolute lg:left-0 lg:top-full lg:z-30 lg:mb-0 lg:ml-0 lg:mt-0 lg:block lg:min-w-[250px] lg:translate-y-2 lg:rounded-xl lg:border-0 lg:bg-white lg:p-2 lg:opacity-0 lg:shadow-lg lg:ring-1 lg:ring-ink/15 lg:invisible lg:transition lg:duration-200 lg:ease-out lg:group-data-[open=true]:visible lg:group-data-[open=true]:translate-y-0 lg:group-data-[open=true]:opacity-100">
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="index.html#directory">Search businesses</a></li>
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="index.html#categories">Browse by category</a></li>
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="index.html#news">Welcome new members</a></li>
+          </ul>
+        </li>
+        <li class="group relative border-b border-ink/10 lg:border-0" data-sub>
+          <button type="button" class="nav-link flex min-h-[48px] w-full items-center justify-between gap-2 rounded-lg px-1 py-3 transition-colors lg:min-h-[44px] lg:w-auto lg:py-2" aria-expanded="false" aria-controls="sub-community">
+            Community
+            <svg aria-hidden="true" viewBox="0 0 20 20" class="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[open=true]:rotate-180" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l5 5 5-5"/></svg>
+          </button>
+          <ul id="sub-community" class="mb-3 ml-1 hidden border-l-4 border-mint pl-2 font-medium text-ink group-data-[open=true]:block lg:absolute lg:left-0 lg:top-full lg:z-30 lg:mb-0 lg:ml-0 lg:mt-0 lg:block lg:min-w-[250px] lg:translate-y-2 lg:rounded-xl lg:border-0 lg:bg-white lg:p-2 lg:opacity-0 lg:shadow-lg lg:ring-1 lg:ring-ink/15 lg:invisible lg:transition lg:duration-200 lg:ease-out lg:group-data-[open=true]:visible lg:group-data-[open=true]:translate-y-0 lg:group-data-[open=true]:opacity-100">
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="index.html#communities">Our communities</a></li>
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="index.html#guide">Community guide</a></li>
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="index.html#news">News and spotlights</a></li>
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="index.html#sponsors">Our partners</a></li>
+          </ul>
+        </li>
+        <li class="group relative border-b border-ink/10 lg:border-0" data-sub>
+          <button type="button" class="nav-link flex min-h-[48px] w-full items-center justify-between gap-2 rounded-lg px-1 py-3 transition-colors lg:min-h-[44px] lg:w-auto lg:py-2" aria-expanded="false" aria-controls="sub-about">
+            About
+            <svg aria-hidden="true" viewBox="0 0 20 20" class="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[open=true]:rotate-180" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l5 5 5-5"/></svg>
+          </button>
+          <ul id="sub-about" class="mb-3 ml-1 hidden border-l-4 border-mint pl-2 font-medium text-ink group-data-[open=true]:block lg:absolute lg:left-0 lg:top-full lg:z-30 lg:mb-0 lg:ml-0 lg:mt-0 lg:block lg:min-w-[250px] lg:translate-y-2 lg:rounded-xl lg:border-0 lg:bg-white lg:p-2 lg:opacity-0 lg:shadow-lg lg:ring-1 lg:ring-ink/15 lg:invisible lg:transition lg:duration-200 lg:ease-out lg:group-data-[open=true]:visible lg:group-data-[open=true]:translate-y-0 lg:group-data-[open=true]:opacity-100">
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="index.html#president">Meet our president</a></li>
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="contact.html" aria-current="page">Contact us</a></li>
+            <li><a class="block rounded-lg px-3 py-2.5 transition-all duration-150 hover:translate-x-1 hover:bg-mint/60" href="index.html#economic-development">Economic development</a></li>
+          </ul>
+        </li>
+        <li class="py-4 lg:py-0">
+          <a class="btn btn-primary w-full !min-h-[44px] !py-2 lg:w-auto" href="index.html#join">Join the chamber</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Page banner (reusable for any interior page) -->
+  <header class="border-b border-ink/10 bg-mint/40">
+    <div class="wrap py-12 lg:py-16">
+      <nav aria-label="Breadcrumb" class="text-sm">
+        <ol class="flex flex-wrap items-center gap-2 text-ink/70">
+          <li><a class="font-semibold text-deep underline-offset-4 hover:underline" href="index.html">Home</a></li>
+          <li aria-hidden="true">/</li>
+          <li class="font-semibold text-ink" aria-current="page">Contact</li>
+        </ol>
+      </nav>
+      <h1 class="mt-4 max-w-[20ch] text-4xl font-extrabold text-deep sm:text-5xl">Contact us</h1>
+      <p class="mt-4 max-w-[52ch] text-lg text-ink/85">
+        Questions about membership, events, or relocating to the area? Our team is here to help.
+      </p>
+    </div>
+  </header>
+
+  <!-- Contact content -->
+  <section class="py-14 lg:py-20" aria-labelledby="contact-form-title">
+    <div class="wrap grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
+
+      <!-- Form -->
+      <div data-reveal>
+        <h2 id="contact-form-title" class="text-2xl font-extrabold text-deep sm:text-3xl">Send a message</h2>
+        <p class="mt-2 text-ink/80">We typically respond within one business day.</p>
+
+        <form class="mt-8 space-y-5" action="#" method="post">
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div>
+              <label class="label" for="first-name">First name</label>
+              <input class="field" id="first-name" name="first-name" type="text" autocomplete="given-name" required>
+            </div>
+            <div>
+              <label class="label" for="last-name">Last name</label>
+              <input class="field" id="last-name" name="last-name" type="text" autocomplete="family-name" required>
+            </div>
+          </div>
+          <div>
+            <label class="label" for="email">Email</label>
+            <input class="field" id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div>
+            <label class="label" for="phone">Phone <span class="font-normal text-ink/60">(optional)</span></label>
+            <input class="field" id="phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+          <div>
+            <label class="label" for="topic">Topic</label>
+            <select class="field" id="topic" name="topic" required>
+              <option value="">Select a topic</option>
+              <option value="membership">Membership</option>
+              <option value="events">Events</option>
+              <option value="directory">Member directory</option>
+              <option value="relocation">Relocation / economic development</option>
+              <option value="sponsorship">Sponsorship</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label class="label" for="message">Message</label>
+            <textarea class="field min-h-[140px] py-3" id="message" name="message" rows="5" required></textarea>
+          </div>
+          <div class="flex flex-wrap items-center gap-4 pt-1">
+            <button type="submit" class="btn btn-primary">Send message</button>
+            <p class="text-sm text-ink/70">Or call us at <a class="link" href="tel:+15555550100">(555) 555-0100</a></p>
+          </div>
+        </form>
+      </div>
+
+      <!-- Sidebar info -->
+      <aside data-reveal style="--d:.1s" class="space-y-6">
+        <div class="rounded-2xl bg-lime p-6 sm:p-8">
+          <h2 class="text-xl font-extrabold text-deep">Visit the chamber</h2>
+          <address class="mt-4 not-italic leading-relaxed">
+            <strong class="font-semibold">Selph Chamber of Commerce</strong><br>
+            100 Main Street<br>
+            Anytown, Texas 75000
+          </address>
+          <ul class="mt-5 space-y-3 text-[15px]">
+            <li>
+              <span class="block text-sm font-semibold text-ink/60">Phone</span>
+              <a class="link" href="tel:+15555550100">(555) 555-0100</a>
+            </li>
+            <li>
+              <span class="block text-sm font-semibold text-ink/60">Email</span>
+              <a class="link" href="mailto:info@selphchamber.org">info@selphchamber.org</a>
+            </li>
+            <li>
+              <span class="block text-sm font-semibold text-ink/60">Hours</span>
+              Monday to Friday<br>8:30 a.m. to 5:00 p.m.
+            </li>
+          </ul>
+        </div>
+
+        <div class="overflow-hidden rounded-2xl border border-ink/10 bg-ink/5">
+          <!-- Replace with real map embed when ready -->
+          <div class="flex aspect-[4/3] flex-col items-center justify-center gap-2 bg-deep/10 p-6 text-center">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-10 w-10 text-deep" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <p class="font-semibold text-deep">100 Main Street</p>
+            <p class="text-sm text-ink/70">Map placeholder — add Google Maps embed here</p>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-ink/10 p-6">
+          <h2 class="text-lg font-extrabold">Meet with leadership</h2>
+          <p class="mt-2 text-[15px] text-ink/80">Schedule a visit with President &amp; CEO Rosa Martinez to talk about your business.</p>
+          <a class="btn btn-quiet mt-4 w-full sm:w-auto" href="mailto:rosa@selphchamber.org?subject=Schedule%20a%20visit">Request a meeting</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Optional CTA strip (reusable block) -->
+  <section class="border-t border-ink/10 bg-deep py-12 text-white" aria-label="Next steps">
+    <div class="wrap flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
+      <div>
+        <h2 class="text-2xl font-extrabold">Ready to join?</h2>
+        <p class="mt-1 text-white/85">Membership applications are reviewed within two business days.</p>
+      </div>
+      <a class="btn bg-white text-ink hover:bg-lime" href="index.html#join">Start your application</a>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-ink text-white">
+  <div class="wrap grid gap-10 py-12 md:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <h2 class="font-display text-xl font-extrabold">Selph Chamber of Commerce</h2>
+      <address class="mt-3 not-italic">
+        100 Main Street<br>
+        Anytown, Texas 75000<br>
+        <a class="inline-block py-1 underline underline-offset-4" href="tel:+15555550100">(555) 555-0100</a><br>
+        <a class="inline-block py-1 underline underline-offset-4" href="mailto:info@selphchamber.org">info@selphchamber.org</a>
+      </address>
+      <p class="mt-3 text-sm">Monday to Friday<br>8:30 a.m. to 5:00 p.m.</p>
+    </div>
+    <nav aria-label="Get involved">
+      <h2 class="font-display text-lg font-bold">Get involved</h2>
+      <ul class="mt-3">
+        <li><a class="inline-block py-1 underline underline-offset-4 transition-colors hover:text-lime" href="#">Become an ambassador</a></li>
+        <li><a class="inline-block py-1 underline underline-offset-4 transition-colors hover:text-lime" href="#">Program guidelines</a></li>
+        <li><a class="inline-block py-1 underline underline-offset-4 transition-colors hover:text-lime" href="#">Festival volunteer sign up</a></li>
+        <li><a class="inline-block py-1 underline underline-offset-4 transition-colors hover:text-lime" href="index.html#leadership">Leadership Selph</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Quick links">
+      <h2 class="font-display text-lg font-bold">Quick links</h2>
+      <ul class="mt-3">
+        <li><a class="inline-block py-1 underline underline-offset-4 transition-colors hover:text-lime" href="#">Member login</a></li>
+        <li><a class="inline-block py-1 underline underline-offset-4 transition-colors hover:text-lime" href="index.html#events">Event calendar</a></li>
+        <li><a class="inline-block py-1 underline underline-offset-4 transition-colors hover:text-lime" href="index.html#directory">Member directory</a></li>
+        <li><a class="inline-block py-1 underline underline-offset-4 transition-colors hover:text-lime" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h2 class="font-display text-lg font-bold">Stay connected</h2>
+      <ul class="mt-3 flex gap-3">
+        <li><a aria-label="Facebook" href="#" class="grid h-11 w-11 place-items-center rounded-full border-2 border-white/60 transition-colors hover:bg-white hover:text-ink"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor"><path d="M14 8h2V5h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2l1-3h-3V8z"/></svg></a></li>
+        <li><a aria-label="LinkedIn" href="#" class="grid h-11 w-11 place-items-center rounded-full border-2 border-white/60 transition-colors hover:bg-white hover:text-ink"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10v8M6 6.5v.01M10 18v-5a3 3 0 0 1 6 0v5M10 10v8"/></svg></a></li>
+        <li><a aria-label="Instagram" href="#" class="grid h-11 w-11 place-items-center rounded-full border-2 border-white/60 transition-colors hover:bg-white hover:text-ink"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17" cy="7" r=".6"/></svg></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/20">
+    <div class="wrap flex flex-wrap items-center justify-between gap-x-6 gap-y-1 py-4 text-sm">
+      <p>Copyright 2026 Selph Chamber of Commerce. All rights reserved.</p>
+      <ul class="flex flex-wrap gap-x-5">
+        <li><a class="inline-block py-1 underline underline-offset-4 transition-colors hover:text-lime" href="#">Privacy policy</a></li>
+        <li><a class="inline-block py-1 underline underline-offset-4 transition-colors hover:text-lime" href="#">Terms and conditions</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById('menu-btn');
+  var nav = document.getElementById('site-nav');
+  var desktop = window.matchMedia('(min-width: 1024px)');
+  var items = Array.prototype.slice.call(document.querySelectorAll('[data-sub]'));
+  var timers = new WeakMap();
+
+  function setSub(li, open) {
+    li.setAttribute('data-open', String(open));
+    var b = li.querySelector('button');
+    if (b) b.setAttribute('aria-expanded', String(open));
+    if (!open) delete li.dataset.kb;
+  }
+  function closeAll(except) {
+    items.forEach(function (li) { if (li !== except) setSub(li, false); });
+  }
+  function setMenu(open) {
+    nav.setAttribute('data-open', String(open));
+    btn.setAttribute('aria-expanded', String(open));
+    if (!open) closeAll();
+  }
+
+  btn.addEventListener('click', function () {
+    setMenu(nav.getAttribute('data-open') !== 'true');
+  });
+
+  items.forEach(function (li) {
+    var b = li.querySelector('button');
+    b.addEventListener('click', function (e) {
+      var open = b.getAttribute('aria-expanded') !== 'true';
+      if (desktop.matches && e.detail > 0) open = true;
+      closeAll(li);
+      setSub(li, open);
+      if (open && e.detail === 0) li.dataset.kb = '1';
+    });
+    li.addEventListener('mouseenter', function () {
+      if (!desktop.matches) return;
+      clearTimeout(timers.get(li));
+      closeAll(li);
+      setSub(li, true);
+    });
+    li.addEventListener('mouseleave', function () {
+      if (!desktop.matches) return;
+      timers.set(li, setTimeout(function () {
+        if (li.dataset.kb !== '1') setSub(li, false);
+      }, 160));
+    });
+    li.addEventListener('focusout', function (e) {
+      if (desktop.matches && !li.contains(e.relatedTarget)) setSub(li, false);
+    });
+  });
+
+  nav.addEventListener('click', function (e) {
+    if (e.target.closest('a')) {
+      closeAll();
+      if (!desktop.matches) setMenu(false);
+    }
+  });
+  document.addEventListener('click', function (e) {
+    if (!nav.contains(e.target) && !btn.contains(e.target)) closeAll();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    var open = items.filter(function (li) { return li.getAttribute('data-open') === 'true'; })[0];
+    if (open) {
+      setSub(open, false);
+      open.querySelector('button').focus();
+    } else if (!desktop.matches && nav.getAttribute('data-open') === 'true') {
+      setMenu(false);
+      btn.focus();
+    }
+  });
+  desktop.addEventListener('change', function () { setMenu(false); });
+})();
+
+(function () {
+  var els = document.querySelectorAll('[data-reveal]');
+  if (!('IntersectionObserver' in window)) {
+    Array.prototype.forEach.call(els, function (el) { el.classList.add('is-in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (x) {
+      if (x.isIntersecting) {
+        x.target.classList.add('is-in');
+        io.unobserve(x.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+  Array.prototype.forEach.call(els, function (el) { io.observe(el); });
+})();
+</script>
+</body>
+</html>
